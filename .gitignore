@@ -3,3 +3,6 @@ BandSite-Package-Sprint-1
 
 # Disregard .css.map
 *.css.map
+
+# Disregard .DS_Store
+*.DS_Store
