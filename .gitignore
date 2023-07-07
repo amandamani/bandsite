@@ -1,0 +1,5 @@
+# Disregards Mockup file
+BandSite-Package-Sprint-1
+
+# Disregard .css.map
+*.css.map
