@@ -13,6 +13,12 @@ body {
     height: 40vh;
     background-image: url("../assets/images/hero-bio.jpg");
     background-size: cover;
+
+    &__h1--center {
+        // text-align: ;
+        float: left;
+        color: white;
+    }
 }
 
 a{
@@ -22,30 +28,31 @@ a{
         text-decoration: none;
     }
     &:hover {
-        text-decoration: solid underline #DB7A4E 4px;
-        text-underline-offset: 0.5rem;
+        text-decoration: solid underline white 4px;
+        text-underline-offset: 1rem;
     }
 }
 
 nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0rem 0.5rem;
-    background-color: white;
+    background-color: black;
     // position: fixed;
     // top: 0;
     // width: 100%;
     // overflow: hidden;
     // z-index: 5;
     .active {
-        text-decoration: solid underline #DB7A4E 4px;
-        text-underline-offset: 0.5rem; 
+        text-decoration: solid underline white 4px;
+        text-underline-offset: 1rem; 
     }
 
     a {
         margin: 0.2rem;
-        color:#335576;
+        color: white;
     }
 }
 
@@ -123,6 +130,14 @@ footer {
 }
 
 .wordmark {
-    color: #335576 ;
+    color: white ;
     margin: 0rem 0rem 0rem 5rem;
 };
+
+.bandsite__footer {
+    background-color: white;
+}
+
+img{
+    width: 85vw;
+}

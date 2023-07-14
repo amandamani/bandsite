@@ -13,6 +13,10 @@ body {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
 }
+.hero__h1--center {
+  float: left;
+  color: white;
+}
 
 a {
   font-weight: 400;
@@ -22,26 +26,27 @@ a:link {
   text-decoration: none;
 }
 a:hover {
-  -webkit-text-decoration: solid underline #DB7A4E 4px;
-          text-decoration: solid underline #DB7A4E 4px;
-  text-underline-offset: 0.5rem;
+  -webkit-text-decoration: solid underline white 4px;
+          text-decoration: solid underline white 4px;
+  text-underline-offset: 1rem;
 }
 
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0rem 0.5rem;
-  background-color: white;
+  background-color: black;
 }
 nav .active {
-  -webkit-text-decoration: solid underline #DB7A4E 4px;
-          text-decoration: solid underline #DB7A4E 4px;
-  text-underline-offset: 0.5rem;
+  -webkit-text-decoration: solid underline white 4px;
+          text-decoration: solid underline white 4px;
+  text-underline-offset: 1rem;
 }
 nav a {
   margin: 0.2rem;
-  color: #335576;
+  color: white;
 }
 
 ul {
@@ -105,6 +110,14 @@ footer h6 {
 }
 
 .wordmark {
-  color: #335576;
+  color: white;
   margin: 0rem 0rem 0rem 5rem;
+}
+
+.bandsite__footer {
+  background-color: white;
+}
+
+img {
+  width: 85vw;
 }/*# sourceMappingURL=bio.css.map */
