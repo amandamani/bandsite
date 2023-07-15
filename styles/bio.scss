@@ -5,19 +5,28 @@
 }
 
 body {
-    margin: 0px;
+    margin: 0rem;
+    padding: 0rem;
 }
 
 .hero {
     width: 100vw;
-    height: 40vh;
+    height: 60vh;
+    padding: 0rem;
+    margin: 0rem;
+    // margin-top: 120px;
     background-image: url("../assets/images/hero-bio.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    
 
     &__h1--center {
-        // text-align: ;
-        float: left;
+        width: 300px;
         color: white;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        padding-right:3rem;
     }
 }
 
@@ -29,7 +38,8 @@ a{
     }
     &:hover {
         text-decoration: solid underline white 4px;
-        text-underline-offset: 1rem;
+        text-underline-offset: 1.1rem;
+        font-weight: bold;
     }
 }
 
@@ -38,17 +48,27 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 0.5rem;
+    padding: 0rem;
+    margin: 0rem;
     background-color: #323232;
     // position: fixed;
     // top: 0;
+    // left: 0;
+    // right: 0;
     // width: 100%;
     // overflow: hidden;
-    // z-index: 5;
+    // z-index: 2;
     .active {
         border-bottom: solid white 4px;
         padding-bottom: 1rem;
         
+        a:link {
+            font-weight: bold;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
     }
 
     a {
@@ -57,53 +77,13 @@ a{
     }
 }
 
-ul{
-    padding: 0rem;
-}
 
-li{
-    list-style-type: none;
-    display: inline;
-    padding: 0rem 1rem;
-    width: 50vw;
-}
-
-.cards{
+.bandsite__footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    margin: 0rem 6rem;
-    
-
-    &__item{
-
-        margin: 0rem;
-        padding: 0rem;
-        text-align: center;
-        background-size: 17rem 22rem;
-        border-radius: 5px;
-        box-shadow: 0px 4px 4px rgba(black, 0.2);
-        border: 1px solid rgba(black, 0.2);
-        width: 17rem;
-        height: 22rem;
-    }
-
-    a{
-        &:hover{
-            border: 7px solid #DB7A4E;
-            border-radius: 5px;
-        }
-    }
-}
-
-main {
-    margin: 3rem;
-}
-
-footer {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem 8rem 0rem;
-    background-color: #FEFAF5;
+    // padding: 2rem 8rem 0rem;
+    background-color: lightblue;
 
     .more__info {
         display: inline-block;
@@ -145,10 +125,15 @@ footer {
     }
 }
 
-.bandsite__footer {
-    background-color: white;
+img{
+    width: 80vw;
+    padding-bottom: 1rem;
 }
 
-img{
-    width: 85vw;
+.bandsite__main {
+    padding:0rem 1rem;
+    
+    p{
+        margin: 0rem;
+    }
 }

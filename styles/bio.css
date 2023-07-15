@@ -4,18 +4,26 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0rem;
+  padding: 0rem;
 }
 
 .hero {
   width: 100vw;
-  height: 40vh;
+  height: 60vh;
+  padding: 0rem;
+  margin: 0rem;
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero__h1--center {
-  float: left;
+  width: 300px;
   color: white;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  padding-right: 3rem;
 }
 
 a {
@@ -28,7 +36,8 @@ a:link {
 a:hover {
   -webkit-text-decoration: solid underline white 4px;
           text-decoration: solid underline white 4px;
-  text-underline-offset: 1rem;
+  text-underline-offset: 1.1rem;
+  font-weight: bold;
 }
 
 .bandsite__nav {
@@ -36,76 +45,47 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 0.5rem;
+  padding: 0rem;
+  margin: 0rem;
   background-color: #323232;
 }
 .bandsite__nav .active {
   border-bottom: solid white 4px;
   padding-bottom: 1rem;
 }
+.bandsite__nav .active a:link {
+  font-weight: bold;
+}
+.bandsite__nav .active a:hover {
+  text-decoration: none;
+}
 .bandsite__nav a {
   margin: 0.2rem;
   color: white;
 }
 
-ul {
-  padding: 0rem;
-}
-
-li {
-  list-style-type: none;
-  display: inline;
-  padding: 0rem 1rem;
-  width: 50vw;
-}
-
-.cards {
+.bandsite__footer {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  margin: 0rem 6rem;
+  background-color: lightblue;
 }
-.cards__item {
-  margin: 0rem;
-  padding: 0rem;
-  text-align: center;
-  background-size: 17rem 22rem;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 17rem;
-  height: 22rem;
-}
-.cards a:hover {
-  border: 7px solid #DB7A4E;
-  border-radius: 5px;
-}
-
-main {
-  margin: 3rem;
-}
-
-footer {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 2rem 8rem 0rem;
-  background-color: #FEFAF5;
-}
-footer .more__info {
+.bandsite__footer .more__info {
   display: inline-block;
   margin-right: 1rem;
 }
-footer img {
+.bandsite__footer img {
   height: 30px;
   width: 25px;
   margin-right: 2.5rem;
 }
-footer h2, footer p {
+.bandsite__footer h2, .bandsite__footer p {
   color: #335576;
 }
-footer p {
+.bandsite__footer p {
   font-weight: 540;
 }
-footer h6 {
+.bandsite__footer h6 {
   color: #DB7A4E;
 }
 
@@ -123,10 +103,14 @@ footer h6 {
   margin: 0rem;
 }
 
-.bandsite__footer {
-  background-color: white;
+img {
+  width: 80vw;
+  padding-bottom: 1rem;
 }
 
-img {
-  width: 85vw;
+.bandsite__main {
+  padding: 0rem 1rem;
+}
+.bandsite__main p {
+  margin: 0rem;
 }/*# sourceMappingURL=bio.css.map */
