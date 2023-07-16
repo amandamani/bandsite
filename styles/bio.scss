@@ -13,6 +13,24 @@ body {
     padding: 0rem;
 }
 
+h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: $fontBold;
+}
+
+h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: $fontDemi;
+}
+
+p{
+    font-family: $fontRegular;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+}
+
 .hero {
     width: 100%;
     height: 45vh;
@@ -21,6 +39,10 @@ body {
     background-image: url("../assets/images/hero-bio.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include mobile500 {
+        height: 55vh;
+    }
     
 
     &__h1--center {
@@ -86,18 +108,16 @@ a{
     padding: 0rem 1rem;
     background-color: $bandsiteBlack;
 
-    &__h1 {
+    &__h1, &__h3,&__p,&__h6 {
         color:$footerTextColor;
-        font-family:$fontBold;
     }
 
     &__img {
-        height: 8vh;
+        height: 5vh;
         padding-right: 2rem;
-    }
-
-    &__h3,&__p,&__h5 {
-        color:$footerTextColor;
+        @include mobile500 {
+            height: 4vh;
+        }
     }
 
     &__h3--margintop {
@@ -114,13 +134,15 @@ a{
 .wordmark {
     color: white ;
     margin: 0rem;
+    font-family: $fontRegular;
+    
 }
 
 .bandDetails {
     padding-bottom: 5rem;
 
     &__member, &__socials {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     

@@ -26,6 +26,24 @@ body {
   padding: 0rem;
 }
 
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: Avenir Next Bold;
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: Avenir Next Demi;
+}
+
+p {
+  font-family: Avenir Next Regular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
 .hero {
   width: 100%;
   height: 45vh;
@@ -34,6 +52,11 @@ body {
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .hero {
+    height: 55vh;
+  }
 }
 .hero__h1--center {
   width: 300px;
@@ -91,16 +114,17 @@ a:hover {
   padding: 0rem 1rem;
   background-color: #323232;
 }
-.bandsite__footer__h1 {
+.bandsite__footer__h1, .bandsite__footer__h3, .bandsite__footer__p, .bandsite__footer__h6 {
   color: white;
-  font-family: Avenir Next Bold;
 }
 .bandsite__footer__img {
-  height: 8vh;
+  height: 5vh;
   padding-right: 2rem;
 }
-.bandsite__footer__h3, .bandsite__footer__p, .bandsite__footer__h5 {
-  color: white;
+@media (min-width: 500px) and (max-width: 768px) {
+  .bandsite__footer__img {
+    height: 4vh;
+  }
 }
 .bandsite__footer__h3--margintop {
   color: white;
@@ -114,13 +138,14 @@ a:hover {
 .wordmark {
   color: white;
   margin: 0rem;
+  font-family: Avenir Next Regular;
 }
 
 .bandDetails {
   padding-bottom: 5rem;
 }
 .bandDetails__member, .bandDetails__socials {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .links {
