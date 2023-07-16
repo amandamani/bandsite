@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Avenir Next Regular';
+    src: url("../../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Demi';
+    src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
+    font-weight: 600;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next Bold';
+    src: url("../../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style:normal;
+}
+
+$fontRegular: Avenir Next Regular;
+$fontDemi: Avenir Next Demi;
+$fontBold: Avenir Next Bold;
