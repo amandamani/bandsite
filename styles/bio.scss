@@ -17,23 +17,38 @@ h1 {
     font-size: 1.5rem;
     line-height: 2rem;
     font-family: $fontBold;
+
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
 }
 
 h3 {
     font-size: 0.875rem;
     line-height: 1.375rem;
     font-family: $fontDemi;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
 }
 
 p{
     font-family: $fontRegular;
     font-size: 0.8125rem;
     line-height: 1.125rem;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
 }
 
 .hero {
     width: 100%;
-    height: 45vh;
+    height: 30vh;
     padding: 0rem;
     margin: 0rem;
     background-image: url("../assets/images/hero-bio.jpg");
@@ -41,7 +56,11 @@ p{
     background-repeat: no-repeat;
 
     @include mobile500 {
-        height: 55vh;
+        height: 45vh;
+    }
+    @include tablet {
+        height: 60vh;
+        background-size: 100% 100%
     }
     
 
@@ -54,6 +73,12 @@ p{
         top: 45%;
         padding-right:3rem;
         margin: 0rem;
+        @include tablet {
+            width: 600px;
+            padding-right: 4rem;
+            font-size:3.75rem;
+            line-height: 4.25rem;
+        }
     }
 }
 
@@ -83,7 +108,7 @@ a{
     @include tablet{
         flex-direction: row;
         justify-content: flex-start;
-        padding: 0.5rem 2rem;
+        padding: 0rem 2rem;
     };
 
     a {
@@ -99,16 +124,35 @@ a{
     justify-content: space-evenly;
     padding: 0rem 1rem;
     background-color: $bandsiteBlack;
+    
 
-    &__h1, &__h3,&__p,&__h6 {
+    &__h3,&__p {
         color:$footerTextColor;
     }
 
+
+    &__h1 {
+        color:$footerTextColor;
+        padding:0rem;
+    }
+
+    &__h6 {
+        font-family: $fontRegular;
+        color:$footerTextColor;
+        @include tablet {
+            font-size:0.8rem;
+            line-height:1.2rem;
+        }
+    }
+
     &__img {
-        height: 5vh;
+        height: 3vh;
         padding-right: 2rem;
         @include mobile500 {
-            height: 4vh;
+            height: 3vh;
+        }
+        @include tablet {
+            height: 3vh;
         }
     }
 
@@ -132,10 +176,36 @@ a{
 
 .bandDetails {
     padding-bottom: 5rem;
-
-    &__member, &__socials {
-        padding-bottom: 0.5rem;
+    @include tablet {
+        display: flex;
+        justify-content: space-around;
     }
+
+    &__member {
+        padding-bottom: 0.5rem;
+        @include tablet {
+            width: 30vw;
+        }
+    }
+
+    &__socials {
+        padding-bottom: 0.5rem;
+        @include tablet {
+            padding-top: 2rem;
+            margin: 0rem 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        &--icons{
+            @include tablet{
+            position:relative;
+            right:10%;
+            }
+        }
+    }
+
+
 
     
 }
@@ -241,5 +311,20 @@ a{
             @include tablet {
                 width: 45%;
             }
+    }
+}
+
+.hiddenBefore {
+    visibility: hidden;
+    
+    @include tablet {
+        visibility: visible;
+    }
+
+}
+
+.hiddenAfter {
+    @include tablet {
+        visibility: hidden;
     }
 }

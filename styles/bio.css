@@ -31,11 +31,23 @@ h1 {
   line-height: 2rem;
   font-family: Avenir Next Bold;
 }
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
 
 h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: Avenir Next Demi;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 p {
@@ -43,10 +55,16 @@ p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
 
 .hero {
   width: 100%;
-  height: 45vh;
+  height: 30vh;
   padding: 0rem;
   margin: 0rem;
   background-image: url("../assets/images/hero-bio.jpg");
@@ -55,7 +73,13 @@ p {
 }
 @media (min-width: 500px) and (max-width: 768px) {
   .hero {
-    height: 55vh;
+    height: 45vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 60vh;
+    background-size: 100% 100%;
   }
 }
 .hero__h1--center {
@@ -67,6 +91,14 @@ p {
   top: 45%;
   padding-right: 3rem;
   margin: 0rem;
+}
+@media (min-width: 768px) {
+  .hero__h1--center {
+    width: 600px;
+    padding-right: 4rem;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
 }
 
 a {
@@ -92,11 +124,11 @@ a:hover {
   margin: 0rem;
   background-color: #323232;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .bandsite__nav {
     flex-direction: row;
     justify-content: flex-start;
-    padding: 0.5rem 2rem;
+    padding: 0rem 2rem;
   }
 }
 .bandsite__nav a {
@@ -111,16 +143,35 @@ a:hover {
   padding: 0rem 1rem;
   background-color: #323232;
 }
-.bandsite__footer__h1, .bandsite__footer__h3, .bandsite__footer__p, .bandsite__footer__h6 {
+.bandsite__footer__h3, .bandsite__footer__p {
   color: white;
 }
+.bandsite__footer__h1 {
+  color: white;
+  padding: 0rem;
+}
+.bandsite__footer__h6 {
+  font-family: Avenir Next Regular;
+  color: white;
+}
+@media (min-width: 768px) {
+  .bandsite__footer__h6 {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+}
 .bandsite__footer__img {
-  height: 5vh;
+  height: 3vh;
   padding-right: 2rem;
 }
 @media (min-width: 500px) and (max-width: 768px) {
   .bandsite__footer__img {
-    height: 4vh;
+    height: 3vh;
+  }
+}
+@media (min-width: 768px) {
+  .bandsite__footer__img {
+    height: 3vh;
   }
 }
 .bandsite__footer__h3--margintop {
@@ -141,8 +192,37 @@ a:hover {
 .bandDetails {
   padding-bottom: 5rem;
 }
-.bandDetails__member, .bandDetails__socials {
+@media (min-width: 768px) {
+  .bandDetails {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.bandDetails__member {
   padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .bandDetails__member {
+    width: 30vw;
+  }
+}
+.bandDetails__socials {
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .bandDetails__socials {
+    padding-top: 2rem;
+    margin: 0rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+@media (min-width: 768px) {
+  .bandDetails__socials--icons {
+    position: relative;
+    right: 10%;
+  }
 }
 
 .links {
@@ -153,7 +233,7 @@ a:hover {
   text-align: center;
   margin: 0rem;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .links p {
     width: 120px;
   }
@@ -162,7 +242,7 @@ a:hover {
   border-bottom: solid white 4px;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .links .active {
     padding-bottom: 0rem;
     border-bottom: none;
@@ -172,7 +252,7 @@ a:hover {
 .links .active a:link {
   font-family: Avenir Next Bold;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .links .active a:link {
     -webkit-text-decoration: 4px underline white;
             text-decoration: 4px underline white;
@@ -182,7 +262,7 @@ a:hover {
 .links .active a:hover {
   text-decoration: none;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .links .active a:hover {
     -webkit-text-decoration: 4px underline white;
             text-decoration: 4px underline white;
@@ -195,7 +275,7 @@ a:hover {
 .bandsite__main__p--bold {
   font-family: Avenir Next Bold;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .bandsite__main__p--bold {
     margin-left: 4.5rem;
     margin-right: 3rem;
@@ -204,7 +284,7 @@ a:hover {
 .bandsite__main__h1--bold {
   font-family: Avenir Next Bold;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .bandsite__main__h1--bold {
     padding-top: 2rem;
   }
@@ -216,7 +296,7 @@ a:hover {
   width: 90vw;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .bandsite__main__img {
     width: 30vw;
     padding-right: 1rem;
@@ -226,7 +306,7 @@ a:hover {
   width: 90vw;
   padding-bottom: 1rem;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .bandsite__main__img--about {
     width: 75vw;
     height: 35vh;
@@ -235,20 +315,35 @@ a:hover {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .moreInfo {
     margin-left: 4.5rem;
     margin-right: 3rem;
   }
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .moreInfo__sec {
     display: flex;
     justify-content: space-between;
   }
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) {
   .moreInfo__div {
     width: 45%;
+  }
+}
+
+.hiddenBefore {
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  .hiddenBefore {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  .hiddenAfter {
+    visibility: hidden;
   }
 }/*# sourceMappingURL=bio.css.map */
