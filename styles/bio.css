@@ -164,16 +164,6 @@ a:hover {
   height: 3vh;
   padding-right: 2rem;
 }
-@media (min-width: 500px) and (max-width: 768px) {
-  .bandsite__footer__img {
-    height: 3vh;
-  }
-}
-@media (min-width: 768px) {
-  .bandsite__footer__img {
-    height: 3vh;
-  }
-}
 .bandsite__footer__h3--margintop {
   color: white;
   margin-top: 0rem;
@@ -196,6 +186,7 @@ a:hover {
   .bandDetails {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 0rem;
   }
 }
 .bandDetails__member {
@@ -309,9 +300,14 @@ a:hover {
 @media (min-width: 768px) {
   .bandsite__main__img--about {
     width: 75vw;
-    height: 35vh;
+    height: 45vh;
     margin-left: 4.5rem;
     margin-right: 3rem;
+  }
+}
+@media (min-width: 1279px) {
+  .bandsite__main__img--about {
+    height: 50vh;
   }
 }
 

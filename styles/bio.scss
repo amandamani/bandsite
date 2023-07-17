@@ -148,12 +148,6 @@ a{
     &__img {
         height: 3vh;
         padding-right: 2rem;
-        @include mobile500 {
-            height: 3vh;
-        }
-        @include tablet {
-            height: 3vh;
-        }
     }
 
     &__h3--margintop {
@@ -179,6 +173,7 @@ a{
     @include tablet {
         display: flex;
         justify-content: space-around;
+        padding-bottom: 0rem;
     }
 
     &__member {
@@ -286,9 +281,13 @@ a{
         padding-bottom: 1rem;
         @include tablet {
             width:75vw;
-            height:35vh;
+            height:45vh;
             margin-left:4.5rem;
             margin-right:3rem;
+        }
+        
+        @include desktop {
+            height: 50vh;
         }
     }
 }
