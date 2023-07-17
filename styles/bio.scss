@@ -67,7 +67,7 @@ a{
     
     &:hover {
         text-decoration: solid underline white 4px;
-        text-underline-offset: 1.1rem;
+        text-underline-offset: 2.3rem;
         font-weight: bold;
     }
 }
@@ -80,19 +80,11 @@ a{
     padding: 0rem;
     margin: 0rem;
     background-color: $bandsiteBlack;
-
-    .active {
-        border-bottom: solid white 4px;
-        padding-bottom: 1rem;
-        
-        a:link {
-            font-family: $fontBold;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-    }
+    @include tablet{
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0.5rem 2rem;
+    };
 
     a {
         margin: 0.2rem;
@@ -154,27 +146,100 @@ a{
         width: 50vw;
         text-align:center;
         margin: 0rem;
+        @include tablet{
+            width: 120px;
+        };
+    }
+
+    .active {
+        border-bottom: solid white 4px;
+        padding-bottom: 1rem;
+        @include tablet{
+            padding-bottom: 0rem;
+            border-bottom:none;
+            margin-left: 3rem;
+        };
+        
+        a:link {
+            font-family: $fontBold;
+            @include tablet{
+                text-decoration: 4px underline white;
+                text-underline-offset: 2.3rem;
+            }
+            
+        }
+        
+        a:hover {
+            text-decoration: none;
+            @include tablet{
+                text-decoration: 4px underline white;
+            };
+        }
+        
     }
 }
 
 
 .bandsite__main {
-    padding:0rem 1rem;
+    padding:0rem 1.5rem;
     
     &__p--bold{
         font-family: $fontBold;
+        @include tablet {
+            margin-left:4.5rem;
+            margin-right:3rem;
+        }
     }
 
     &__h1--bold{
         font-family: $fontBold;
+        @include tablet {
+            padding-top: 2rem;
+        }
     }
 
     &__h3{
         margin:1rem 0rem;
     }
 
-    &__img{
+    &__img {
         width: 90vw;
         padding-bottom: 1rem;
+        @include tablet {
+            width: 30vw;
+            padding-right:1rem;
+        }
+    }
+
+    &__img--about {
+        width: 90vw;
+        padding-bottom: 1rem;
+        @include tablet {
+            width:75vw;
+            height:35vh;
+            margin-left:4.5rem;
+            margin-right:3rem;
+        }
+    }
+}
+
+.moreInfo {
+
+    @include tablet {
+        margin-left:4.5rem;
+        margin-right:3rem;
+    }
+
+    &__sec {
+        @include tablet {
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__div {
+            @include tablet {
+                width: 45%;
+            }
     }
 }

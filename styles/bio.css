@@ -79,7 +79,7 @@ a:link {
 a:hover {
   -webkit-text-decoration: solid underline white 4px;
           text-decoration: solid underline white 4px;
-  text-underline-offset: 1.1rem;
+  text-underline-offset: 2.3rem;
   font-weight: bold;
 }
 
@@ -92,15 +92,12 @@ a:hover {
   margin: 0rem;
   background-color: #323232;
 }
-.bandsite__nav .active {
-  border-bottom: solid white 4px;
-  padding-bottom: 1rem;
-}
-.bandsite__nav .active a:link {
-  font-family: Avenir Next Bold;
-}
-.bandsite__nav .active a:hover {
-  text-decoration: none;
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite__nav {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.5rem 2rem;
+  }
 }
 .bandsite__nav a {
   margin: 0.2rem;
@@ -156,15 +153,61 @@ a:hover {
   text-align: center;
   margin: 0rem;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .links p {
+    width: 120px;
+  }
+}
+.links .active {
+  border-bottom: solid white 4px;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .links .active {
+    padding-bottom: 0rem;
+    border-bottom: none;
+    margin-left: 3rem;
+  }
+}
+.links .active a:link {
+  font-family: Avenir Next Bold;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .links .active a:link {
+    -webkit-text-decoration: 4px underline white;
+            text-decoration: 4px underline white;
+    text-underline-offset: 2.3rem;
+  }
+}
+.links .active a:hover {
+  text-decoration: none;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .links .active a:hover {
+    -webkit-text-decoration: 4px underline white;
+            text-decoration: 4px underline white;
+  }
+}
 
 .bandsite__main {
-  padding: 0rem 1rem;
+  padding: 0rem 1.5rem;
 }
 .bandsite__main__p--bold {
   font-family: Avenir Next Bold;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite__main__p--bold {
+    margin-left: 4.5rem;
+    margin-right: 3rem;
+  }
+}
 .bandsite__main__h1--bold {
   font-family: Avenir Next Bold;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite__main__h1--bold {
+    padding-top: 2rem;
+  }
 }
 .bandsite__main__h3 {
   margin: 1rem 0rem;
@@ -172,4 +215,40 @@ a:hover {
 .bandsite__main__img {
   width: 90vw;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite__main__img {
+    width: 30vw;
+    padding-right: 1rem;
+  }
+}
+.bandsite__main__img--about {
+  width: 90vw;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite__main__img--about {
+    width: 75vw;
+    height: 35vh;
+    margin-left: 4.5rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .moreInfo {
+    margin-left: 4.5rem;
+    margin-right: 3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .moreInfo__sec {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .moreInfo__div {
+    width: 45%;
+  }
 }/*# sourceMappingURL=bio.css.map */
