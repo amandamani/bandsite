@@ -1,3 +1,77 @@
-// h1 {
-//     font-size: 1rem
-// }
+@use "./partials/colors" as *;
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+
+.hero__shows {
+
+    width: 100%;
+    height: 40vh;
+    padding: 0rem;
+    margin: 0rem;
+    background-image: url("../assets/Images/Photo-gallery-3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include mobile500 {
+        height: 45vh;
+    }
+
+    @include tablet {
+        height: 60vh;
+        background-size: 100% 100%
+    }
+    
+
+    &__h1--center {
+        width: 300px;
+        color: $heroH1Color;
+        font-family: $fontBold;
+        margin: 0rem 0rem 0rem 1rem;
+
+        @include tablet {
+            width: 600px;
+            padding-right: 4rem;
+            font-size:3.75rem;
+            line-height: 4.25rem;
+        }
+    }
+
+    &__h3--center {
+        width: 300px;
+        color: $heroH1Color;
+        font-family: $fontBold;
+        margin: 0rem 0rem 1.5rem 1rem;
+        padding-top: 2rem;
+        
+        @include tablet {
+            width: 600px;
+            padding-right: 4rem;
+            font-size:1.5rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+.soundCloud__frame {
+    display: inline-block;
+    margin: 0rem 0rem 1.5rem 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+#frame {
+    width: 80%;
+    height: 50%;
+    position: relative;
+    border-radius: 3%;
+ }
+ 
+ #frame {
+    zoom: 0.75;
+    -moz-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+ }

@@ -1,1 +1,91 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+.hero__shows {
+  width: 100%;
+  height: 40vh;
+  padding: 0rem;
+  margin: 0rem;
+  background-image: url("../assets/Images/Photo-gallery-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .hero__shows {
+    height: 45vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero__shows {
+    height: 60vh;
+    background-size: 100% 100%;
+  }
+}
+.hero__shows__h1--center {
+  width: 300px;
+  color: white;
+  font-family: Avenir Next Bold;
+  margin: 0rem 0rem 0rem 1rem;
+}
+@media (min-width: 768px) {
+  .hero__shows__h1--center {
+    width: 600px;
+    padding-right: 4rem;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+.hero__shows__h3--center {
+  width: 300px;
+  color: white;
+  font-family: Avenir Next Bold;
+  margin: 0rem 0rem 1.5rem 1rem;
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .hero__shows__h3--center {
+    width: 600px;
+    padding-right: 4rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.soundCloud__frame {
+  display: inline-block;
+  margin: 0rem 0rem 1.5rem 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+#frame {
+  width: 80%;
+  height: 50%;
+  position: relative;
+  border-radius: 3%;
+}
+
+#frame {
+  zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+}/*# sourceMappingURL=shows.css.map */
