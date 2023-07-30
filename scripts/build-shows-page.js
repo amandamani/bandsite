@@ -128,6 +128,9 @@ let renderShows = () => {
             if (mediaQuery.matches) {
                 createNewShow(element);
             }
+            else{
+                //do nothing
+            }
         }
         else{
             createNewShow(element);
@@ -136,9 +139,4 @@ let renderShows = () => {
 }
 
 renderShows();
-if (mediaQuery.matches) {
-    renderShows;
-}
-else {
-    renderShows;
-}
+window.addEventListener("resize", renderShows);
