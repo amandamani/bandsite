@@ -334,10 +334,14 @@ a{
         width: 5vh;
         border-radius: 50%;
         object-fit: cover;
+        margin: 1rem 1rem 0rem 0rem;
     }
 }
 
 .newComment {
+
+    display: flex;
+
     &__userDetails {
         display: flex;
         justify-content: space-between;

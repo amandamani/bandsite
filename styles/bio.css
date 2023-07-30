@@ -350,8 +350,12 @@ a:hover {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin: 1rem 1rem 0rem 0rem;
 }
 
+.newComment {
+  display: flex;
+}
 .newComment__userDetails {
   display: flex;
   justify-content: space-between;
