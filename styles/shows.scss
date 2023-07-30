@@ -54,17 +54,34 @@
 
 .soundCloud__frame {
     display: inline-block;
-    margin: 0rem 0rem 1.5rem 1rem;
-    width: 100%;
-    height: 100%;
+    margin: 0rem 0rem 0rem 1rem;
+    width: 70%;
+    height: 40%;
     position: relative;
 }
 
 #frame {
-    width: 60%;
-    height: 35%;
+    width: 80%;
+    height: 50%;
     position: absolute;
     border-radius: 3%;
     zoom: 0.75;
  }
  
+ .shows__add {
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__section {
+        width: 20%;
+    }
+ }
+
+ .hidden {
+    visibility: hidden;
+ }
