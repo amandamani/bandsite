@@ -342,4 +342,17 @@ a:hover {
   .hiddenAfter {
     visibility: hidden;
   }
+}
+
+.commentsForm__userIcon {
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.newComment__userDetails {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

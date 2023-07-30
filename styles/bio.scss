@@ -327,3 +327,19 @@ a{
         visibility: hidden;
     }
 }
+
+.commentsForm {
+    &__userIcon {
+        height: 5vh;
+        width: 5vh;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.newComment {
+    &__userDetails {
+        display: flex;
+        justify-content: space-between;
+    }
+}
