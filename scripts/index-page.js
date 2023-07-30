@@ -1,20 +1,5 @@
-/* <div class="newComment">
-    <div>
-        <img src="assets/Images/greyBackground.jpg" alt="No User Icon" class="commentsForm__userIcon">
-    </div>
-    <div>
-        <div class="newComment__userDetails">
-            <h3>Connor Walton</h3>
-            <h3>02/17/2021</h3>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Nemo facere in magni eius mollitia aliquid iste. Eveniet, hic eius. 
-            Quae nobis delectus corrupti, nemo molestias fugit assumenda inventore voluptate sit.</p>
-        </div>
-</div>
-<hr>> */
-
 let comments = [
+
     {userName: "Connor Walton",
     timeStamp: "02/17/2021",
     userComment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
@@ -81,3 +66,17 @@ let renderComments = () => {
 }
 
 renderComments();
+
+const commentsForm = document.getElementById('commentsForm');
+
+commentsForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let commentToAdd = {};
+    commentToAdd.userName = e.target.userName.value;
+    commentToAdd.userComment = e.target.userComment.value;
+    let current_date = new Date();
+    commentToAdd.timeStamp = String(current_date.getMonth() + 1 + "/" + current_date.getDate() + "/" + current_date.getFullYear());
+    comments.unshift(commentToAdd);
+    e.target.reset();
+    renderComments();
+})
