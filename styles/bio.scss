@@ -422,10 +422,17 @@ a{
     }
     &__buyTicket {
         height: 8vh;
-        width: 85vw;
+        width: 90vw;
         letter-spacing: 0.08rem;
+        @include mobile500{
+            width: 93vw;
+        }
         @include tablet {
-            width:auto;
+            width: 20vw;
+            height: 5vh;
+        }
+        @include desktop {
+            width: 12vw;
         }
     }
 

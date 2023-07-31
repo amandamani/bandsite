@@ -441,12 +441,23 @@ a:hover {
 }
 .buttonBandsite__buyTicket {
   height: 8vh;
-  width: 85vw;
+  width: 90vw;
   letter-spacing: 0.08rem;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .buttonBandsite__buyTicket {
+    width: 93vw;
+  }
 }
 @media (min-width: 768px) {
   .buttonBandsite__buyTicket {
-    width: auto;
+    width: 20vw;
+    height: 5vh;
+  }
+}
+@media (min-width: 1279px) {
+  .buttonBandsite__buyTicket {
+    width: 12vw;
   }
 }
 @media (min-width: 768px) {

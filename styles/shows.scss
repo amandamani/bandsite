@@ -11,14 +11,26 @@
     background-image: url("../assets/Images/Photo-gallery-3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+        flex-direction: row;
+        align-items: center;
+
+    }
 
     @include mobile500 {
-        height: 35vh;
+        height: 33vh;
     }
 
     @include tablet {
         height: 45vh;
         background-size: 100% 100%
+    }
+
+    @include desktop {
+        height: 55vh;
+        background-size: 100% 100%;
     }
     
 
@@ -34,12 +46,15 @@
             font-size:3.75rem;
             line-height: 4.25rem;
         }
+        @include desktop {
+            margin-left: 4rem;
+        }
     }
 
     &__h3--center {
         width: 300px;
         color: $heroH1Color;
-        font-family: $fontBold;
+        font-family: $fontDemi;
         margin: 0rem 0rem 1.5rem 1rem;
         padding-top: 2rem;
         
@@ -48,6 +63,10 @@
             padding-right: 4rem;
             font-size:1.5rem;
             line-height: 2rem;
+        }
+
+        @include desktop {
+            margin-left: 4rem;
         }
     }
 }
@@ -58,6 +77,10 @@
     width: 95%;
     height: 50%;
     position: relative;
+    @include desktop {
+        margin-top: 4rem;
+        width: 60%;
+    }
 }
 
 #frame {
@@ -68,34 +91,43 @@
     zoom: 0.75;
  }
  
- .shows__add {
-    display: flex;
-    flex-direction: column;
-    @include tablet{
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+ .shows{
+    &__h1--marginLeft {
+        @include desktop {
+            margin-left: 5rem;
+        }
     }
 
-    &__section {
-        width: 80%;
+    &__add{
+        display: flex;
+        flex-direction: column;
         @include tablet{
-            width: 20%;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
-        &__h3 {
-            font-family: $fontRegular;
-            color: $bandsiteBlack;
-            margin-top: 0rem;
-            &--bold{
-                font-family: $fontDemi;
+
+        &__section {
+            width: 80%;
+            @include tablet{
+                width: 20%;
             }
-        }
-        &__h5 {
-            font-family: $fontDemi;
-            color: $bandsiteSilver;
-            line-height: 1.25rem;
-            font-size: 0.75rem;
-            margin: 0rem;
+            &__h3 {
+                font-family: $fontRegular;
+                color: $bandsiteBlack;
+                margin-top: 0rem;
+                &--bold{
+                    font-family: $fontDemi;
+                    margin-top: 0rem;
+                }
+            }
+            &__h5 {
+                font-family: $fontDemi;
+                color: $bandsiteSilver;
+                line-height: 1.25rem;
+                font-size: 0.75rem;
+                margin: 0rem;
+            }
         }
     }
  }
@@ -135,5 +167,11 @@
             border-bottom:none;
             margin-left: 3rem;
         };
+    }
+}
+
+#shows {
+    @include desktop {
+        margin: 1rem 10rem 1rem 20rem;;
     }
 }

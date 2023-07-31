@@ -66,7 +66,12 @@ let createNewShow = (element) => {
     h5.innerText = "DATE";
     h5.setAttribute('id', 'show'+shows.indexOf(element))
     const h3 = document.createElement('h3');
-    h3.classList.add('shows__add__section__h3--bold');
+    if (shows.indexOf(element) === 0) {
+        h3.classList.add('shows__add__section__h5');
+    }
+    else{
+        h3.classList.add('shows__add__section__h3--bold');
+    }
     h3.innerText = element.date;
     h3.setAttribute('id', 'show'+shows.indexOf(element))
     if(!mediaQuery.matches){
@@ -83,7 +88,12 @@ let createNewShow = (element) => {
      h5Venue.innerText = "VENUE";
      h5Venue.setAttribute('id', 'show'+shows.indexOf(element))
      const h3Venue = document.createElement('h3');
-     h3Venue.classList.add('shows__add__section__h3');
+     if (shows.indexOf(element) === 0) {
+        h3Venue.classList.add('shows__add__section__h5');
+    }
+    else{
+        h3Venue.classList.add('shows__add__section__h3');
+    }
      h3Venue.innerText = element.venue;
      h3Venue.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
@@ -100,7 +110,12 @@ let createNewShow = (element) => {
      h5Location.innerText = "LOCATION";
      h5Location.setAttribute('id', 'show'+shows.indexOf(element))
      const h3Location = document.createElement('h3');
-     h3Location.classList.add('shows__add__section__h3');
+     if (shows.indexOf(element) === 0) {
+        h3Location.classList.add('shows__add__section__h5');
+    }
+    else{
+        h3Location.classList.add('shows__add__section__h3');
+    }
      h3Location.innerText = element.location;
      h3Location.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
@@ -133,8 +148,8 @@ let createNewShow = (element) => {
 } 
 
 let renderShows = () => {
-    
-    (document.getElementById('shows')).innerHTML = '<h1 class="bandsite__main__h1--bold">Shows</h1>';
+    let showSection = document.getElementById('shows')
+    showSection.innerHTML = '';
 
     shows.forEach(element => {
         if (shows.indexOf(element) === 0){
@@ -149,6 +164,7 @@ let renderShows = () => {
             createNewShow(element);
         }
     })
+    showSection.appendChild(showDiv);
 }
 
 renderShows();
