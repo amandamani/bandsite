@@ -8,6 +8,4 @@ BandSite-Package-Sprint-2
 # Disregard .DS_Store
 *.DS_Store
 
-# Disregard __MACOSX
-__MACOSX
 
