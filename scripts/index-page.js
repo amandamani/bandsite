@@ -36,7 +36,7 @@ let createNewComment = (element) => {
     divUserDetails.appendChild(userName);
 
     const timeStamp = document.createElement('h3');
-    //timeStamp.classList.add('placeholder')
+    timeStamp.classList.add('newComment__userDetails--mercuryTextcolor')
     timeStamp.innerText = element.timeStamp;
     divUserDetails.appendChild(timeStamp);
 

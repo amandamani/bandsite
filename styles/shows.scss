@@ -82,6 +82,21 @@
         @include tablet{
             width: 20%;
         }
+        &__h3 {
+            font-family: $fontRegular;
+            color: $bandsiteBlack;
+            margin-top: 0rem;
+            &--bold{
+                font-family: $fontDemi;
+            }
+        }
+        &__h5 {
+            font-family: $fontDemi;
+            color: $bandsiteSilver;
+            line-height: 1.25rem;
+            font-size: 0.75rem;
+            margin: 0rem;
+        }
     }
  }
 
@@ -90,7 +105,7 @@
  }
 
  .highlight {
-    background-color: lightgrey;
+    background-color: $bandsiteMercury;
  }
 
  .links {

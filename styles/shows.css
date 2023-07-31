@@ -101,13 +101,28 @@
     width: 20%;
   }
 }
+.shows__add__section__h3 {
+  font-family: Avenir Next Regular;
+  color: #323232;
+  margin-top: 0rem;
+}
+.shows__add__section__h3--bold {
+  font-family: Avenir Next Demi;
+}
+.shows__add__section__h5 {
+  font-family: Avenir Next Demi;
+  color: #AFAFAF;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+  margin: 0rem;
+}
 
 .hidden {
   visibility: hidden;
 }
 
 .highlight {
-  background-color: lightgrey;
+  background-color: #E1E1E1;
 }
 
 .links {

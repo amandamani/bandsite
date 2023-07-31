@@ -69,17 +69,21 @@
         <section id="comments">
             <h1 class="bandsite__main__h1--bold">Join the Conversation</h1>
             <div>
-                <form id="commentsForm">
-                    <label for="userName" class="labelBandsite">NAME</label>
-                    <br>
-                    <img class="commentsForm__userIcon" src="assets/Images/Mohan-muruge.jpg" alt="mohanMuruge icon">
-                    <input type="text" id="userName" name="userName" placeholder="Enter your name"/>
-                    <br>
-                    <label for="userComment" class="labelBandsite">COMMENT</label>
-                    <br>
-                    <textarea id="userComment" name="userComment" placeholder="Add a new comment"></textarea>
-                    <br>
-                    <button type="submit" class="buttonBandsite">COMMENT</button>
+                <form id="commentsForm" class="commentsForm">
+                    <div>
+                        <img class="commentsForm__userIcon" src="assets/Images/Mohan-muruge.jpg" alt="mohanMuruge icon">
+                    </div>
+                    <div>
+                        <label for="userName" class="labelBandsite">NAME</label>
+                        <br>
+                        <input type="text" id="userName" name="userName" placeholder=" Enter your name" class="commentsForm__feild"/>
+                        <br>
+                        <label for="userComment" class="labelBandsite">COMMENT</label>
+                        <br>
+                        <textarea id="userComment" name="userComment" placeholder=" Add a new comment" class="commentsForm__feild commentsForm__feild--textareaHeight"></textarea>
+                        <br>
+                        <button type="submit" class="buttonBandsite">COMMENT</button>
+                    </div>
                 </form>
             </div>
             <div id="commentSection">

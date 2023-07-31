@@ -329,12 +329,30 @@ a{
 }
 
 .commentsForm {
+    display:flex;
+    position: relative;
+    height: 20%;
+
     &__userIcon {
         height: 5vh;
         width: 5vh;
         border-radius: 50%;
         object-fit: cover;
         margin: 1rem 1rem 0rem 0rem;
+    }
+
+    &__feild {
+        background-color: white;
+        border-radius: 4px;
+        width: 65vw;
+        height: 5vh;
+        margin-bottom: 1rem;
+        &::placeholder{
+            color: $bandsiteBlack;
+        }
+        &--textareaHeight {
+            height: 15vh;
+        }
     }
 }
 
@@ -345,12 +363,17 @@ a{
     &__userDetails {
         display: flex;
         justify-content: space-between;
-        width: 70vw
+        width: 70vw;
+        &--mercuryTextcolor {
+            color: $bandsiteSilver;
+            font-weight: 100;
+        }
     }
 }
 
-.labelBandsite, .buttonBandsite {
-    font-family: $fontBold;
+.labelBandsite {
+    font-family: $fontDemi;
+    color: $bandsiteSilver;
     line-height: 1.25rem;
     font-size: 0.75rem;
     @include tablet {
@@ -360,7 +383,16 @@ a{
 
 .buttonBandsite {
     background-color: $bandsiteBlack;
+    border-radius: 4px;
+    border-style: none;
+    font-family: $fontDemi;
+    font-size: 1.2rem;
+    color: white;
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 1rem;
     &:hover {
         background-color: $bandsiteDarkBlack;
     }
 }
+

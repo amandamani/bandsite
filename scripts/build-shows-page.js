@@ -62,11 +62,11 @@ let createNewShow = (element) => {
     divDate.classList.add('shows__add__section');
     divDate.setAttribute('id', 'show'+shows.indexOf(element))
     const h5 = document.createElement('h5');
-    //h5.classList.add('commentsForm__userIcon');
+    h5.classList.add('shows__add__section__h5');
     h5.innerText = "DATE";
     h5.setAttribute('id', 'show'+shows.indexOf(element))
     const h3 = document.createElement('h3');
-    //h3.classList.add('commentsForm__userIcon');
+    h3.classList.add('shows__add__section__h3--bold');
     h3.innerText = element.date;
     h3.setAttribute('id', 'show'+shows.indexOf(element))
     if(!mediaQuery.matches){
@@ -79,15 +79,15 @@ let createNewShow = (element) => {
      divVenue.classList.add('shows__add__section');
      divVenue.setAttribute('id', 'show'+shows.indexOf(element))
      const h5Venue = document.createElement('h5');
-     //h5Venue.classList.add('commentsForm__userIcon');
+     h5Venue.classList.add('shows__add__section__h5');
      h5Venue.innerText = "VENUE";
      h5Venue.setAttribute('id', 'show'+shows.indexOf(element))
      const h3Venue = document.createElement('h3');
-     //h3Venue.classList.add('commentsForm__userIcon');
+     h3Venue.classList.add('shows__add__section__h3');
      h3Venue.innerText = element.venue;
      h3Venue.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
-         divDate.appendChild(h5Venue);}
+         divVenue.appendChild(h5Venue);}
      divVenue.appendChild(h3Venue);
      divTop.appendChild(divVenue);
 
@@ -96,11 +96,11 @@ let createNewShow = (element) => {
      divLocation.classList.add('shows__add__section');
      divLocation.setAttribute('id', 'show'+shows.indexOf(element))
      const h5Location = document.createElement('h5');
-     //h5Location.classList.add('commentsForm__userIcon');
+     h5Location.classList.add('shows__add__section__h5');
      h5Location.innerText = "LOCATION";
      h5Location.setAttribute('id', 'show'+shows.indexOf(element))
      const h3Location = document.createElement('h3');
-     //h3Location.classList.add('commentsForm__userIcon');
+     h3Location.classList.add('shows__add__section__h3');
      h3Location.innerText = element.location;
      h3Location.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
@@ -113,7 +113,7 @@ let createNewShow = (element) => {
      divButton.classList.add('shows__add__section');
      divButton.setAttribute('id', 'show'+shows.indexOf(element))
      const button = document.createElement('button');
-     //button.classList.add('commentsForm__userIcon');
+     button.classList.add('buttonBandsite');
      if (shows.indexOf(element) === 0){
         button.classList.add('hidden')
      }
