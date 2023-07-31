@@ -94,9 +94,50 @@
   }
 }
 .shows__add__section {
-  width: 20%;
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .shows__add__section {
+    width: 20%;
+  }
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.highlight {
+  background-color: lightgrey;
+}
+
+.links {
+  display: inline-flex;
+}
+.links p {
+  width: 50vw;
+  text-align: center;
+  margin: 0rem;
+}
+@media (min-width: 768px) {
+  .links p {
+    width: 120px;
+  }
+}
+.links .active {
+  border-bottom: solid white 4px;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .links .active {
+    padding-bottom: 0rem;
+    border-bottom: none;
+    margin-left: 0rem;
+  }
+}
+@media (min-width: 768px) {
+  .links .not__active {
+    padding-bottom: 0rem;
+    border-bottom: none;
+    margin-left: 3rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

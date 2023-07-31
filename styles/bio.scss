@@ -348,3 +348,19 @@ a{
         width: 70vw
     }
 }
+
+.labelBandsite, .buttonBandsite {
+    font-family: $fontBold;
+    line-height: 1.25rem;
+    font-size: 0.75rem;
+    @include tablet {
+        font-size: 0.625rem;
+    }
+}
+
+.buttonBandsite {
+    background-color: $bandsiteBlack;
+    &:hover {
+        background-color: $bandsiteDarkBlack;
+    }
+}

@@ -360,4 +360,22 @@ a:hover {
   display: flex;
   justify-content: space-between;
   width: 70vw;
+}
+
+.labelBandsite, .buttonBandsite {
+  font-family: Avenir Next Bold;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  .labelBandsite, .buttonBandsite {
+    font-size: 0.625rem;
+  }
+}
+
+.buttonBandsite {
+  background-color: #323232;
+}
+.buttonBandsite:hover {
+  background-color: #000000;
 }/*# sourceMappingURL=bio.css.map */

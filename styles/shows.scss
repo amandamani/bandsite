@@ -78,10 +78,47 @@
     }
 
     &__section {
-        width: 20%;
+        width: 80%;
+        @include tablet{
+            width: 20%;
+        }
     }
  }
 
  .hidden {
     visibility: hidden;
  }
+
+ .highlight {
+    background-color: lightgrey;
+ }
+
+ .links {
+    display:inline-flex;
+    p {
+        width: 50vw;
+        text-align:center;
+        margin: 0rem;
+        @include tablet{
+            width: 120px;
+        };
+    }
+
+    .active {
+        border-bottom: solid white 4px;
+        padding-bottom: 1rem;
+        @include tablet{
+            padding-bottom: 0rem;
+            border-bottom:none;
+            margin-left: 0rem;
+        };
+    }
+
+    .not__active {
+        @include tablet{
+            padding-bottom: 0rem;
+            border-bottom:none;
+            margin-left: 3rem;
+        };
+    }
+}
