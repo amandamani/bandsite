@@ -349,6 +349,15 @@ a:hover {
   position: relative;
   height: 20%;
 }
+.commentsForm__Input {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .commentsForm__Input--right {
+    align-self: flex-end;
+  }
+}
 .commentsForm__userIcon {
   height: 5vh;
   width: 5vh;
@@ -363,6 +372,11 @@ a:hover {
   width: 65vw;
   height: 5vh;
   margin-bottom: 1rem;
+}
+@media (min-width: 1279px) {
+  .commentsForm__feild {
+    width: 33vw;
+  }
 }
 .commentsForm__feild::-moz-placeholder {
   color: #323232;
@@ -382,9 +396,21 @@ a:hover {
   justify-content: space-between;
   width: 70vw;
 }
+@media (min-width: 1279px) {
+  .newComment__userDetails {
+    width: 30vw;
+  }
+}
+.newComment__userDetails__h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: Avenir Next Demi;
+}
 .newComment__userDetails--mercuryTextcolor {
   color: #AFAFAF;
   font-weight: 100;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .labelBandsite {
@@ -412,4 +438,26 @@ a:hover {
 }
 .buttonBandsite:hover {
   background-color: #000000;
+}
+.buttonBandsite__buyTicket {
+  height: 8vh;
+  width: 85vw;
+  letter-spacing: 0.08rem;
+}
+@media (min-width: 768px) {
+  .buttonBandsite__buyTicket {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
+  .buttonBandsite__comment {
+    width: 200px;
+    height: 6vh;
+  }
+}
+
+@media (min-width: 1279px) {
+  .conversation {
+    margin: 1rem 25rem;
+  }
 }/*# sourceMappingURL=bio.css.map */

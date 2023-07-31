@@ -333,6 +333,17 @@ a{
     position: relative;
     height: 20%;
 
+    &__Input {
+        display: flex;
+        flex-direction: column;
+        &--right {
+            @include tablet{
+                align-self: flex-end;
+            }
+            
+        }
+    }
+
     &__userIcon {
         height: 5vh;
         width: 5vh;
@@ -346,6 +357,9 @@ a{
         border-radius: 4px;
         width: 65vw;
         height: 5vh;
+        @include desktop {
+            width:33vw;
+        }
         margin-bottom: 1rem;
         &::placeholder{
             color: $bandsiteBlack;
@@ -364,9 +378,21 @@ a{
         display: flex;
         justify-content: space-between;
         width: 70vw;
+        @include desktop {
+            width: 30vw;
+        }
+
+        &__h3 {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+            font-family: $fontDemi;
+        }
+
         &--mercuryTextcolor {
             color: $bandsiteSilver;
             font-weight: 100;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
         }
     }
 }
@@ -393,6 +419,29 @@ a{
     margin-bottom: 1rem;
     &:hover {
         background-color: $bandsiteDarkBlack;
+    }
+    &__buyTicket {
+        height: 8vh;
+        width: 85vw;
+        letter-spacing: 0.08rem;
+        @include tablet {
+            width:auto;
+        }
+    }
+
+    &__comment{
+        @include tablet {
+            width: 200px;
+            height: 6vh;
+        }
+        
+    }
+
+}
+
+.conversation {
+    @include desktop{
+        margin: 1rem 25rem;
     }
 }
 

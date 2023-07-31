@@ -114,6 +114,7 @@ let createNewShow = (element) => {
      divButton.setAttribute('id', 'show'+shows.indexOf(element))
      const button = document.createElement('button');
      button.classList.add('buttonBandsite');
+     button.classList.add('buttonBandsite__buyTicket');
      if (shows.indexOf(element) === 0){
         button.classList.add('hidden')
      }
@@ -158,6 +159,7 @@ window.addEventListener("resize", renderShows);
 
 window.addEventListener("click", (e) => {
 
+    e.stopImmediatePropagation();
     let highlighted = document.querySelectorAll('.highlight');
     console.log(highlighted.length);
     if (highlighted.length > 0) {

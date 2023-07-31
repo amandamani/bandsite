@@ -31,7 +31,7 @@ let createNewComment = (element) => {
     divUserDetails.classList.add('newComment__userDetails');
 
     const userName = document.createElement('h3');
-    //userName.classList.add('placeholder')
+    userName.classList.add('newComment__userDetails__h3')
     userName.innerText = element.userName;
     divUserDetails.appendChild(userName);
 

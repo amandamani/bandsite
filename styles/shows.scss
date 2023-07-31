@@ -5,7 +5,7 @@
 .hero__shows {
 
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     padding: 0rem;
     margin: 0rem;
     background-image: url("../assets/Images/Photo-gallery-3.jpg");
@@ -13,11 +13,11 @@
     background-repeat: no-repeat;
 
     @include mobile500 {
-        height: 45vh;
+        height: 35vh;
     }
 
     @include tablet {
-        height: 60vh;
+        height: 45vh;
         background-size: 100% 100%
     }
     
@@ -55,8 +55,8 @@
 .soundCloud__frame {
     display: inline-block;
     margin: 0rem 0rem 0rem 1rem;
-    width: 70%;
-    height: 40%;
+    width: 95%;
+    height: 50%;
     position: relative;
 }
 
