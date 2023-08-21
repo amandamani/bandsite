@@ -13,30 +13,30 @@ let comments = [
     userComment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
 ];
 
-let createNewComment = (element) => {
+let createnewcomment = (element) => {
     const divTop = document.createElement('div');
-    divTop.classList.add('newComment');
+    divTop.classList.add('new-comment');
 
     const divImg = document.createElement('div');
     const img = document.createElement('img');
     img.setAttribute('src', 'assets/Images/greyBackground.jpg')
     img.setAttribute('alt', 'No User Icon')
-    img.classList.add('commentsForm__userIcon')
+    img.classList.add('comments-form__usericon')
     divImg.appendChild(img);
     divTop.appendChild(divImg);
 
     const divInfo = document.createElement('div');
 
     const divUserDetails = document.createElement('div');
-    divUserDetails.classList.add('newComment__userDetails');
+    divUserDetails.classList.add('new-comment__userdetails');
 
     const userName = document.createElement('h3');
-    userName.classList.add('newComment__userDetails__h3')
+    userName.classList.add('new-comment__userdetails__h3')
     userName.innerText = element.userName;
     divUserDetails.appendChild(userName);
 
     const timeStamp = document.createElement('h3');
-    timeStamp.classList.add('newComment__userDetails--mercuryTextcolor')
+    timeStamp.classList.add('new-comment__userdetails--mercuryTextcolor')
     timeStamp.innerText = element.timeStamp;
     divUserDetails.appendChild(timeStamp);
 
@@ -61,7 +61,7 @@ let createNewComment = (element) => {
 let renderComments = () => {
     (document.getElementById('commentSection')).innerHTML = "<hr>";
     comments.forEach(element => {
-        createNewComment(element);
+        createnewcomment(element);
     })
 }
 

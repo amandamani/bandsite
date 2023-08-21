@@ -66,12 +66,14 @@ let createNewShow = (element) => {
     h5.innerText = "DATE";
     h5.setAttribute('id', 'show'+shows.indexOf(element))
     const h3 = document.createElement('h3');
+
     if (shows.indexOf(element) === 0) {
         h3.classList.add('shows__add__section__h5');
     }
     else{
         h3.classList.add('shows__add__section__h3--bold');
     }
+    
     h3.innerText = element.date;
     h3.setAttribute('id', 'show'+shows.indexOf(element))
     if(!mediaQuery.matches){
@@ -128,8 +130,8 @@ let createNewShow = (element) => {
      divButton.classList.add('shows__add__section');
      divButton.setAttribute('id', 'show'+shows.indexOf(element))
      const button = document.createElement('button');
-     button.classList.add('buttonBandsite');
-     button.classList.add('buttonBandsite__buyTicket');
+     button.classList.add('bandsite__button');
+     button.classList.add('bandsite__button__buyticket');
      if (shows.indexOf(element) === 0){
         button.classList.add('hidden')
      }

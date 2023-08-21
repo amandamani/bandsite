@@ -13,12 +13,7 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    @include desktop {
-        flex-direction: row;
-        align-items: center;
-
-    }
-
+  
     @include mobile500 {
         height: 33vh;
     }
@@ -29,6 +24,8 @@
     }
 
     @include desktop {
+        flex-direction: row;
+        align-items: center;
         height: 55vh;
         background-size: 100% 100%;
     }
@@ -71,7 +68,7 @@
     }
 }
 
-.soundCloud__frame {
+.soundcloud__frame {
     display: inline-block;
     margin: 0rem 0rem 0rem 1rem;
     width: 95%;
@@ -140,38 +137,18 @@
     background-color: $bandsiteMercury;
  }
 
- .links {
-    display:inline-flex;
-    p {
-        width: 50vw;
-        text-align:center;
-        margin: 0rem;
-        @include tablet{
-            width: 120px;
-        };
-    }
-
-    .active {
-        border-bottom: solid white 4px;
-        padding-bottom: 1rem;
-        @include tablet{
-            padding-bottom: 0rem;
-            border-bottom:none;
-            margin-left: 0rem;
-        };
-    }
-
-    .not__active {
-        @include tablet{
-            padding-bottom: 0rem;
-            border-bottom:none;
-            margin-left: 3rem;
-        };
-    }
-}
+ 
 
 #shows {
     @include desktop {
         margin: 1rem 10rem 1rem 20rem;;
+    }
+}
+
+.links {
+    .active {
+        @include tablet{
+            margin-left: 0rem;
+        };
     }
 }
