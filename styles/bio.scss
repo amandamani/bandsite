@@ -133,6 +133,10 @@ body {
     &__img {
         height: 3vh;
         padding-right: 2rem;
+        &--twitter{
+            padding: 0rem;
+        }
+
     }
 
     &__h3--margintop {
@@ -146,11 +150,19 @@ body {
     }
 }
 
-.wordmark {
-    color: white ;
-    margin: 0rem;
-    font-family: $fontRegular;
-    
+.logo {
+    height: 50px;
+    width: 200px;
+    @include tablet {
+        margin: 0.5rem 0rem;
+    }
+    &__footer{
+        @include tablet{
+            width: 180px;
+            height: 120px;
+            margin: 0rem;
+        }
+    }
 }
 
 .band-details {
@@ -175,12 +187,16 @@ body {
             margin: 0rem 0.5rem;
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: center;
         }
         &--icons{
             @include tablet{
             position:relative;
-            right:10%;
+            right:5%;
+            }
+
+            @include desktop {
+                right: 10%;
             }
         }
     }
@@ -246,12 +262,12 @@ body {
         };
 
         a:hover {
-            text-decoration: none;
+            font-family: $fontBold;
             @include tablet{
                 text-decoration: 4px underline white;
                 text-underline-offset: 1.7rem;
-            };
-        }
+            }
+        };
     }
 }
 

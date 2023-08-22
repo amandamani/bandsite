@@ -150,6 +150,9 @@ body {
   height: 3vh;
   padding-right: 2rem;
 }
+.bandsite__footer__img--twitter {
+  padding: 0rem;
+}
 .bandsite__footer__h3--margintop {
   color: white;
   margin-top: 0rem;
@@ -159,10 +162,21 @@ body {
   margin-bottom: 0rem;
 }
 
-.wordmark {
-  color: white;
-  margin: 0rem;
-  font-family: Avenir Next Regular;
+.logo {
+  height: 50px;
+  width: 200px;
+}
+@media (min-width: 768px) {
+  .logo {
+    margin: 0.5rem 0rem;
+  }
+}
+@media (min-width: 768px) {
+  .logo__footer {
+    width: 180px;
+    height: 120px;
+    margin: 0rem;
+  }
 }
 
 .band-details {
@@ -192,12 +206,17 @@ body {
     margin: 0rem 0.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
   }
 }
 @media (min-width: 768px) {
   .band-details__socials--icons {
     position: relative;
+    right: 5%;
+  }
+}
+@media (min-width: 1279px) {
+  .band-details__socials--icons {
     right: 10%;
   }
 }
@@ -263,7 +282,7 @@ body {
   }
 }
 .links__not-active a:hover {
-  text-decoration: none;
+  font-family: Avenir Next Bold;
 }
 @media (min-width: 768px) {
   .links__not-active a:hover {
