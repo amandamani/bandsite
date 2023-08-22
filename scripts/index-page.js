@@ -51,26 +51,31 @@ let createnewcomment = (element) => {
 
     const hrLine = document.createElement('hr');
 
-    const commentSection = document.getElementById('commentSection');
+    const commentSection = document.getElementById('comment-section');
 
     commentSection.appendChild(divTop);
     commentSection.appendChild(hrLine);
 
 } 
 
-let renderComments = () => {
-    (document.getElementById('commentSection')).innerHTML = "<hr>";
+let displayComment = () => {
+    
+    const commentSection = document.getElementById('comment-section');
+    commentSection.innerText = "";
+    const hrEl = document.createElement('hr')
+    commentSection.appendChild(hrEl)
+    
     comments.forEach(element => {
         createnewcomment(element);
     })
 }
 
-renderComments();
+displayComment();
 
-const commentsForm = document.getElementById('commentsForm');
+const commentsForm = document.getElementById('comments-form');
 
 commentsForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let commentToAdd = {};
     commentToAdd.userName = e.target.userName.value;
     commentToAdd.userComment = e.target.userComment.value;
@@ -78,5 +83,5 @@ commentsForm.addEventListener('submit', (e) => {
     commentToAdd.timeStamp = String(current_date.getMonth() + 1 + "/" + current_date.getDate() + "/" + current_date.getFullYear());
     comments.unshift(commentToAdd);
     e.target.reset();
-    renderComments();
+    displayComment();
 })
