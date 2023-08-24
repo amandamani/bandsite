@@ -53,120 +53,118 @@ let shows = [
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 
 let createNewShow = (element) => {
-    const divTop = document.createElement('div');
-    divTop.classList.add('shows__add');
-    divTop.setAttribute('id', 'show'+shows.indexOf(element))
+
+    //CREATE ROW
+    const showItem = document.createElement('div');
+    showItem.classList.add('shows__add');
+    showItem.setAttribute('id', 'show'+shows.indexOf(element))
 
     // ADD DATE
-    const divDate = document.createElement('div');
-    divDate.classList.add('shows__add__section');
-    divDate.setAttribute('id', 'show'+shows.indexOf(element))
-    const h5 = document.createElement('h5');
-    h5.classList.add('shows__add__section__h5');
-    h5.innerText = "DATE";
-    h5.setAttribute('id', 'show'+shows.indexOf(element))
-    const h3 = document.createElement('h3');
+    const showDate = document.createElement('div');
+    showDate.classList.add('shows__add__section');
+    showDate.setAttribute('id', 'show'+shows.indexOf(element))
+    const dateHeading = document.createElement('h5');
+    dateHeading.classList.add('shows__add__section__cell-content');
+    dateHeading.innerText = "DATE";
+    dateHeading.setAttribute('id', 'show'+shows.indexOf(element))
+    const dateContent = document.createElement('h3');
 
     if (shows.indexOf(element) === 0) {
-        h3.classList.add('shows__add__section__h5');
+        dateContent.classList.add('shows__add__section__cell-content');
     }
     else{
-        h3.classList.add('shows__add__section__h3--bold');
+        dateContent.classList.add('shows__add__section__sub-heading--bold');
     }
     
-    h3.innerText = element.date;
-    h3.setAttribute('id', 'show'+shows.indexOf(element))
+    dateContent.innerText = element.date;
+    dateContent.setAttribute('id', 'show'+shows.indexOf(element))
     if(!mediaQuery.matches){
-        divDate.appendChild(h5);}
-    divDate.appendChild(h3);
-    divTop.appendChild(divDate);
+        showDate.appendChild(dateHeading);}
+    showDate.appendChild(dateContent);
+    showItem.appendChild(showDate);
 
      // ADD VENUE
-     const divVenue = document.createElement('div');
-     divVenue.classList.add('shows__add__section');
-     divVenue.setAttribute('id', 'show'+shows.indexOf(element))
-     const h5Venue = document.createElement('h5');
-     h5Venue.classList.add('shows__add__section__h5');
-     h5Venue.innerText = "VENUE";
-     h5Venue.setAttribute('id', 'show'+shows.indexOf(element))
-     const h3Venue = document.createElement('h3');
+     const showVenue = document.createElement('div');
+     showVenue.classList.add('shows__add__section');
+     showVenue.setAttribute('id', 'show'+shows.indexOf(element))
+     const venueHeading = document.createElement('h5');
+     venueHeading.classList.add('shows__add__section__cell-content');
+     venueHeading.innerText = "VENUE";
+     venueHeading.setAttribute('id', 'show'+shows.indexOf(element))
+     const venueContent = document.createElement('h3');
      if (shows.indexOf(element) === 0) {
-        h3Venue.classList.add('shows__add__section__h5');
+        venueContent.classList.add('shows__add__section__cell-content');
     }
     else{
-        h3Venue.classList.add('shows__add__section__h3');
+        venueContent.classList.add('shows__add__section__sub-heading');
     }
-     h3Venue.innerText = element.venue;
-     h3Venue.setAttribute('id', 'show'+shows.indexOf(element))
+     venueContent.innerText = element.venue;
+     venueContent.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
-         divVenue.appendChild(h5Venue);}
-     divVenue.appendChild(h3Venue);
-     divTop.appendChild(divVenue);
+         showVenue.appendChild(venueHeading);}
+     showVenue.appendChild(venueContent);
+     showItem.appendChild(showVenue);
 
      // ADD LOCATION
-     const divLocation = document.createElement('div');
-     divLocation.classList.add('shows__add__section');
-     divLocation.setAttribute('id', 'show'+shows.indexOf(element))
-     const h5Location = document.createElement('h5');
-     h5Location.classList.add('shows__add__section__h5');
-     h5Location.innerText = "LOCATION";
-     h5Location.setAttribute('id', 'show'+shows.indexOf(element))
-     const h3Location = document.createElement('h3');
+     const showLocation = document.createElement('div');
+     showLocation.classList.add('shows__add__section');
+     showLocation.setAttribute('id', 'show'+shows.indexOf(element))
+     const locationHeading = document.createElement('h5');
+     locationHeading.classList.add('shows__add__section__cell-content');
+     locationHeading.innerText = "LOCATION";
+     locationHeading.setAttribute('id', 'show'+shows.indexOf(element))
+     const locationContent = document.createElement('h3');
      if (shows.indexOf(element) === 0) {
-        h3Location.classList.add('shows__add__section__h5');
+        locationContent.classList.add('shows__add__section__cell-content');
     }
     else{
-        h3Location.classList.add('shows__add__section__h3');
+        locationContent.classList.add('shows__add__section__sub-heading');
     }
-     h3Location.innerText = element.location;
-     h3Location.setAttribute('id', 'show'+shows.indexOf(element))
+     locationContent.innerText = element.location;
+     locationContent.setAttribute('id', 'show'+shows.indexOf(element))
      if(!mediaQuery.matches){
-         divLocation.appendChild(h5Location);}
-     divLocation.appendChild(h3Location);
-     divTop.appendChild(divLocation);
+         showLocation.appendChild(locationHeading);}
+     showLocation.appendChild(locationContent);
+     showItem.appendChild(showLocation);
 
      // ADD BUTTON
-     const divButton = document.createElement('div');
-     divButton.classList.add('shows__add__section');
-     divButton.setAttribute('id', 'show'+shows.indexOf(element))
-     const button = document.createElement('button');
-     button.classList.add('bandsite__button');
-     button.classList.add('bandsite__button__buyticket');
+     const buttonCell = document.createElement('div');
+     buttonCell.classList.add('shows__add__section');
+     buttonCell.setAttribute('id', 'show'+shows.indexOf(element))
+     const buyTicket = document.createElement('button');
+     buyTicket.classList.add('bandsite__button');
+     buyTicket.classList.add('bandsite__button__buyticket');
      if (shows.indexOf(element) === 0){
-        button.classList.add('hidden')
+        buyTicket.classList.add('hidden')
      }
-     button.innerText = "BUY TICKETS";
-     button.setAttribute('id', 'show'+shows.indexOf(element))
-     divButton.appendChild(button);
-     divTop.appendChild(divButton);
+     buyTicket.innerText = "BUY TICKETS";
+     buyTicket.setAttribute('id', 'show'+shows.indexOf(element))
+     buttonCell.appendChild(buyTicket);
+     showItem.appendChild(buttonCell);
 
     const hrLine = document.createElement('hr');
 
     const showSection = document.getElementById('shows');
 
-    showSection.appendChild(divTop);
+    showSection.appendChild(showItem);
     if (shows.indexOf(element) !== 0){
         showSection.appendChild(hrLine);}
 } 
 
 let renderShows = () => {
     let showSection = document.getElementById('shows')
-    showSection.innerHTML = '';
+    showSection.innerText = '';
 
     shows.forEach(element => {
         if (shows.indexOf(element) === 0){
             if (mediaQuery.matches) {
                 createNewShow(element);
             }
-            else{
-                //do nothing
-            }
         }
         else{
             createNewShow(element);
         }
     })
-    showSection.appendChild(showDiv);
 }
 
 renderShows();

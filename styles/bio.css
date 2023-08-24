@@ -1,24 +1,22 @@
 @font-face {
-  font-family: "Avenir Next Regular";
+  font-family: "Avenir Next";
   src: url("../../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
-  font-family: "Avenir Next Demi";
+  font-family: "Avenir Next";
   src: url("../../assets/font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
-  font-style: normal;
 }
 @font-face {
-  font-family: "Avenir Next Bold";
+  font-family: "Avenir Next";
   src: url("../../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
-  font-style: normal;
 }
 * {
   box-sizing: border-box;
-  font-family: Avenir Next Regular;
+  font-family: Avenir Next;
+  font-weight: 400;
 }
 
 body {
@@ -26,37 +24,36 @@ body {
   padding: 0rem;
 }
 
-.bandsite__h1 {
+.bandsite__heading {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: Avenir Next Bold;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
-  .bandsite__h1 {
+  .bandsite__heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
   }
 }
 
-.bandsite__h3 {
+.bandsite__sub-heading {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-family: Avenir Next Demi;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
-  .bandsite__h3 {
+  .bandsite__sub-heading {
     font-size: 1.5rem;
     line-height: 2rem;
   }
 }
 
-.bandsite__p {
-  font-family: Avenir Next Regular;
+.bandsite__info {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
-  .bandsite__p {
+  .bandsite__info {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -82,10 +79,10 @@ body {
     background-size: 100% 100%;
   }
 }
-.hero__h1--center {
+.hero__heading--center {
   width: 300px;
   color: white;
-  font-family: Avenir Next Bold;
+  font-weight: 700;
   text-align: center;
   position: relative;
   top: 45%;
@@ -93,7 +90,7 @@ body {
   margin: 0rem;
 }
 @media (min-width: 768px) {
-  .hero__h1--center {
+  .hero__heading--center {
     width: 600px;
     padding-right: 4rem;
     font-size: 3.75rem;
@@ -117,7 +114,7 @@ body {
     padding: 0rem 2rem;
   }
 }
-.bandsite__nav a {
+.bandsite__nav__link {
   margin: 0.2rem;
   color: white;
 }
@@ -129,42 +126,43 @@ body {
   padding: 0rem 1rem;
   background-color: #323232;
 }
-.bandsite__footer__h3, .bandsite__footer__p {
+.bandsite__footer__info {
   color: white;
 }
-.bandsite__footer__h1 {
+.bandsite__footer__info--margintop {
+  color: white;
+  margin-top: 0rem;
+}
+.bandsite__footer__info--marginbottom {
+  color: white;
+  margin-bottom: 0rem;
+}
+.bandsite__footer__heading {
   color: white;
   padding: 0rem;
 }
-.bandsite__footer__h6 {
-  font-family: Avenir Next Regular;
+.bandsite__footer__copyright {
+  font-family: Avenir Next;
   color: white;
 }
 @media (min-width: 768px) {
-  .bandsite__footer__h6 {
+  .bandsite__footer__copyright {
     font-size: 0.8rem;
     line-height: 1.2rem;
   }
 }
-.bandsite__footer__img {
+.bandsite__footer__icon {
   height: 3vh;
   padding-right: 2rem;
 }
-.bandsite__footer__img--twitter {
+.bandsite__footer__icon--twitter {
   padding: 0rem;
-}
-.bandsite__footer__h3--margintop {
-  color: white;
-  margin-top: 0rem;
-}
-.bandsite__footer__h3--marginbottom {
-  color: white;
-  margin-bottom: 0rem;
 }
 
 .logo {
   height: 50px;
   width: 200px;
+  margin: 1rem 0rem;
 }
 @media (min-width: 768px) {
   .logo {
@@ -199,6 +197,7 @@ body {
 }
 .band-details__socials {
   padding-bottom: 0.5rem;
+  height: 120px;
 }
 @media (min-width: 768px) {
   .band-details__socials {
@@ -224,13 +223,13 @@ body {
 .links {
   display: inline-flex;
 }
-.links__p {
+.links__info {
   width: 50vw;
   text-align: center;
   margin: 0rem;
 }
 @media (min-width: 768px) {
-  .links__p {
+  .links__info {
     width: 120px;
   }
 }
@@ -255,7 +254,7 @@ body {
   }
 }
 .links__active a:link {
-  font-family: Avenir Next Bold;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .links__active a:link {
@@ -278,11 +277,11 @@ body {
   .links__not-active {
     padding-bottom: 0rem;
     border-bottom: none;
-    margin-left: 3rem;
+    margin-left: 0rem;
   }
 }
 .links__not-active a:hover {
-  font-family: Avenir Next Bold;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .links__not-active a:hover {
@@ -295,42 +294,42 @@ body {
 .bandsite__main {
   padding: 0rem 1.5rem;
 }
-.bandsite__main__p--bold {
-  font-family: Avenir Next Bold;
+.bandsite__main__info--bold {
+  font-weight: 700;
 }
 @media (min-width: 768px) {
-  .bandsite__main__p--bold {
+  .bandsite__main__info--bold {
     margin-left: 4.5rem;
     margin-right: 3rem;
   }
 }
-.bandsite__main__h1--bold {
-  font-family: Avenir Next Bold;
+.bandsite__main__heading--bold {
+  font-weight: 700;
 }
 @media (min-width: 768px) {
-  .bandsite__main__h1--bold {
+  .bandsite__main__heading--bold {
     padding-top: 2rem;
   }
 }
-.bandsite__main__h3 {
+.bandsite__main__sub-heading {
   margin: 1rem 0rem;
 }
-.bandsite__main__img {
+.bandsite__main__photo {
   width: 90vw;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .bandsite__main__img {
+  .bandsite__main__photo {
     width: 30vw;
     padding-right: 1rem;
   }
 }
-.bandsite__main__img--about {
+.bandsite__main__photo--about {
   width: 90vw;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
-  .bandsite__main__img--about {
+  .bandsite__main__photo--about {
     width: 75vw;
     height: 45vh;
     margin-left: 4.5rem;
@@ -338,7 +337,7 @@ body {
   }
 }
 @media (min-width: 1279px) {
-  .bandsite__main__img--about {
+  .bandsite__main__photo--about {
     height: 50vh;
   }
 }
@@ -433,10 +432,10 @@ body {
     width: 30vw;
   }
 }
-.new-comment__userdetails__h3 {
+.new-comment__userdetails__sub-heading {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-family: Avenir Next Demi;
+  font-weight: 600;
 }
 .new-comment__userdetails--mercuryTextcolor {
   color: #AFAFAF;
@@ -446,7 +445,7 @@ body {
 }
 
 .bandsite__label {
-  font-family: Avenir Next Demi;
+  font-weight: 600;
   color: #AFAFAF;
   line-height: 1.25rem;
   font-size: 0.75rem;
@@ -461,7 +460,7 @@ body {
   background-color: #323232;
   border-radius: 4px;
   border-style: none;
-  font-family: Avenir Next Demi;
+  font-weight: 600;
   font-size: 1.2rem;
   color: white;
   width: 100%;

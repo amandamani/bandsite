@@ -31,10 +31,10 @@
     }
     
 
-    &__h1--center {
+    &__heading--center {
         width: 300px;
         color: $heroH1Color;
-        font-family: $fontBold;
+        font-weight: $fontWeightBold;
         margin: 0rem 0rem 0rem 1rem;
 
         @include tablet {
@@ -48,10 +48,10 @@
         }
     }
 
-    &__h3--center {
+    &__sub-heading--center {
         width: 300px;
         color: $heroH1Color;
-        font-family: $fontDemi;
+        font-weight: $fontWeightDemi;
         margin: 0rem 0rem 1.5rem 1rem;
         padding-top: 2rem;
         
@@ -89,7 +89,7 @@
  }
  
  .shows{
-    &__h1--marginLeft {
+    &__heading--marginLeft {
         @include desktop {
             margin-left: 5rem;
         }
@@ -109,17 +109,17 @@
             @include tablet{
                 width: 20%;
             }
-            &__h3 {
+            &__sub-heading {
                 font-family: $fontRegular;
                 color: $bandsiteBlack;
                 margin-top: 0rem;
                 &--bold{
-                    font-family: $fontDemi;
+                    font-weight: $fontWeightDemi;
                     margin-top: 0rem;
                 }
             }
-            &__h5 {
-                font-family: $fontDemi;
+            &__cell-content {
+                font-weight: $fontWeightDemi;
                 color: $bandsiteSilver;
                 line-height: 1.25rem;
                 font-size: 0.75rem;
@@ -146,7 +146,12 @@
 }
 
 .links {
-    .active {
+    &__not-active {
+        @include tablet{
+            margin-left: 3rem;
+        };
+    }
+    &__active {
         @include tablet{
             margin-left: 0rem;
         };
