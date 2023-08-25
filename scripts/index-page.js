@@ -14,46 +14,47 @@ let comments = [
 ];
 
 let createnewcomment = (element) => {
-    const divTop = document.createElement('div');
-    divTop.classList.add('new-comment');
+    const newComment = document.createElement('div');
+    newComment.classList.add('new-comment');
 
-    const divImg = document.createElement('div');
-    const img = document.createElement('img');
-    img.setAttribute('src', 'assets/Images/greyBackground.jpg')
-    img.setAttribute('alt', 'No User Icon')
-    img.classList.add('comments-form__usericon')
-    divImg.appendChild(img);
-    divTop.appendChild(divImg);
+    const userPictureContainer = document.createElement('div');
+    const userPhoto = document.createElement('img');
+    userPhoto.setAttribute('src', 'assets/Images/greyBackground.jpg')
+    userPhoto.setAttribute('alt', 'No User Icon')
+    userPhoto.classList.add('comments-form__usericon')
+    userPictureContainer.appendChild(userPhoto);
+    newComment.appendChild(userPictureContainer);
 
-    const divInfo = document.createElement('div');
+    const userInfo = document.createElement('div');
 
-    const divUserDetails = document.createElement('div');
-    divUserDetails.classList.add('new-comment__userdetails');
+    const userDetails = document.createElement('div');
+    userDetails.classList.add('new-comment__userdetails');
 
     const userName = document.createElement('h3');
     userName.classList.add('new-comment__userdetails__sub-heading')
     userName.innerText = element.userName;
-    divUserDetails.appendChild(userName);
+    userDetails.appendChild(userName);
 
     const timeStamp = document.createElement('h3');
     timeStamp.classList.add('new-comment__userdetails--mercuryTextcolor')
     timeStamp.innerText = element.timeStamp;
-    divUserDetails.appendChild(timeStamp);
+    userDetails.appendChild(timeStamp);
 
-    divInfo.appendChild(divUserDetails);
+    userInfo.appendChild(userDetails);
 
-    const pInfo = document.createElement('p');
-    pInfo.innerText = element.userComment;
+    const userCommentContent = document.createElement('p');
+    userCommentContent.classList.add('new-comment__userdetails__comment');
+    userCommentContent.innerText = element.userComment;
 
-    divInfo.appendChild(pInfo);
+    userInfo.appendChild(userCommentContent);
 
-    divTop.appendChild(divInfo);
+    newComment.appendChild(userInfo);
 
     const hrLine = document.createElement('hr');
 
     const commentSection = document.getElementById('comment-section');
 
-    commentSection.appendChild(divTop);
+    commentSection.appendChild(newComment);
     commentSection.appendChild(hrLine);
 
 } 

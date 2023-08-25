@@ -115,10 +115,12 @@ body {
         color:$footerTextColor;
         &--margintop {
             color:$footerTextColor;
+            font-weight: $fontWeightDemi;
             margin-top:0rem;
         }
         &--marginbottom {
             color:$footerTextColor;
+            font-weight: $fontWeightDemi;
             margin-bottom:0rem;
         }
     }
@@ -126,6 +128,7 @@ body {
 
     &__heading {
         color:$footerTextColor;
+        font-weight: $fontWeightBold;
         padding:0rem;
     }
 
@@ -153,7 +156,7 @@ body {
     width: 200px;
     margin: 1rem 0rem;
     @include tablet {
-        margin: 0.5rem 0rem;
+        margin: 1.2rem 0rem;
     }
     &__footer{
         @include tablet{
@@ -239,7 +242,7 @@ body {
             font-weight: $fontWeightBold;
             @include tablet{
                 text-decoration: 4px underline white;
-                text-underline-offset: 1.7rem;
+                text-underline-offset: 2.4rem;
             }
             
         }
@@ -248,7 +251,7 @@ body {
             text-decoration: none;
             @include tablet{
                 text-decoration: 4px underline white;
-                text-underline-offset: 1.7rem;
+                text-underline-offset: 2.4rem;
             };
         }
         
@@ -265,7 +268,7 @@ body {
             font-weight: $fontWeightBold;
             @include tablet{
                 text-decoration: 4px underline white;
-                text-underline-offset: 1.7rem;
+                text-underline-offset: 2.4rem;
             }
         };
     }
@@ -359,16 +362,15 @@ body {
     display:flex;
     position: relative;
     height: 20%;
-
+    width: 50vw;
     &__input {
         display: flex;
         flex-direction: column;
         &--right {
             @include tablet{
                 align-self: flex-end;
-            }
-            
-        }
+            }  
+        }  
     }
 
     &__usericon {
@@ -382,10 +384,13 @@ body {
     &__feild {
         background-color: white;
         border-radius: 4px;
-        width: 65vw;
+        width: 75vw;
         height: 5vh;
+        @include tablet {
+            width:65vw;
+        }
         @include desktop {
-            width:33vw;
+            width:45vw;
         }
         margin-bottom: 1rem;
         &::placeholder{
@@ -404,9 +409,13 @@ body {
     &__userdetails {
         display: flex;
         justify-content: space-between;
-        width: 70vw;
+        width: 75vw;
+        @include tablet {
+            width: 65vw;
+        }
+        
         @include desktop {
-            width: 30vw;
+            width: 45vw;
         }
 
         &__sub-heading {
@@ -436,7 +445,7 @@ body {
 
 .bandsite__button {
     background-color: $bandsiteBlack;
-    border-radius: 4px;
+    border-radius: 6px;
     border-style: none;
     font-weight: $fontWeightDemi;
     font-size: 1.2rem;
@@ -474,8 +483,22 @@ body {
 }
 
 .conversation {
+    @include tablet {
+        width: 80vw;
+        margin-left: 6rem;
+    }
     @include desktop{
-        margin: 1rem 25rem;
+        margin: 1rem 17rem;
+    }
+}
+
+#comment-section {
+    width: 90vw;
+    @include tablet {
+        width: 75vw;
+    }
+    @include desktop {
+        width: 50vw;
     }
 }
 

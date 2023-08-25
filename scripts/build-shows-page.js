@@ -177,17 +177,13 @@ window.addEventListener("click", (e) => {
 
     e.stopImmediatePropagation();
     let highlighted = document.querySelectorAll('.highlight');
-    console.log(highlighted.length);
     if (highlighted.length > 0) {
-        console.log(highlighted);
-        highlighted[0].classList.add('what')
         highlighted[0].classList.remove('highlight');
     }
     
     let showId = e.target.id;
     if (showId !== "show0"){
         let shows = document.querySelectorAll('#'+showId);
-        console.log(shows[0]);
         shows[0].classList.add('highlight');
     }
     
