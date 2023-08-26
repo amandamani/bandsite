@@ -21,13 +21,16 @@ updateComments = () =>{
             result.data.forEach(element => {
                 let object = {};
                 object.userName = element.name;
-                object.timeStamp = new Intl.DateTimeFormat('en-US', {day: "2-digit", month: "2-digit", year:"numeric"}).format(element.timestamp);
+                object.timeStamp = element.timestamp;
                 object.id = element.id;
                 object.userComment = element.comment;
                 object.likes = element.likes;
                 comments.push(object);
             });
             comments.sort(function(a, b){return b.timeStamp - a.timeStamp});
+            comments.forEach(element => {
+                element.timeStamp = new Intl.DateTimeFormat('en-US', {day: "2-digit", month: "2-digit", year:"numeric"}).format(element.timeStamp)
+            })
             displayComment();
         }
     );
@@ -90,10 +93,15 @@ commentsForm.addEventListener('submit', (e) => {
     e.target.reset();
     let commentPostStr = JSON.stringify(commentToAdd)
     const postComment = axios.post(apiUrl+"comments"+"?api_key="+apiKey, commentToAdd);
-    postComment.then(
+    postComment
+    .then(
         result => {
-            console.log(result);
             updateComments();
         }
     )
+    .catch(
+        err => {
+            alert("Error: " + err);
+        }
+        )
 })
