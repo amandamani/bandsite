@@ -1,18 +1,37 @@
-let comments = [
+let apiUrl = "https://project-1-api.herokuapp.com/";
+let apiKey = "9e0e3d6d-f22e-49f7-a582-6f15fcd91c55";
 
-    {userName: "Connor Walton",
-    timeStamp: "02/17/2021",
-    userComment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
+updateComments = () =>{
+    let comments = new Array();
 
-    {userName: "Emilie Beach",
-    timeStamp: "01/09/2021",
-    userComment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-
-    {userName: "Miles Acosta",
-    timeStamp: "12/20/2020",
-    userComment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
-];
-
+    let displayComment = () => {
+    
+        const commentSection = document.getElementById('comment-section');
+        commentSection.innerText = "";
+        const hrEl = document.createElement('hr')
+        commentSection.appendChild(hrEl)
+        
+        comments.forEach(element => {
+            createnewcomment(element);
+        })
+    };
+    const data = axios.get(apiUrl+"comments"+"?api_key="+apiKey)
+    data.then(
+        result => {
+            result.data.forEach(element => {
+                let object = {};
+                object.userName = element.name;
+                object.timeStamp = new Intl.DateTimeFormat('en-US', {day: "2-digit", month: "2-digit", year:"numeric"}).format(element.timestamp);
+                object.id = element.id;
+                object.userComment = element.comment;
+                object.likes = element.likes;
+                comments.push(object);
+            });
+            comments.sort(function(a, b){return b.timeStamp - a.timeStamp});
+            displayComment();
+        }
+    );
+}
 let createnewcomment = (element) => {
     const newComment = document.createElement('div');
     newComment.classList.add('new-comment');
@@ -57,32 +76,24 @@ let createnewcomment = (element) => {
     commentSection.appendChild(newComment);
     commentSection.appendChild(hrLine);
 
-} 
-
-let displayComment = () => {
-    
-    const commentSection = document.getElementById('comment-section');
-    commentSection.innerText = "";
-    const hrEl = document.createElement('hr')
-    commentSection.appendChild(hrEl)
-    
-    comments.forEach(element => {
-        createnewcomment(element);
-    })
 }
 
-displayComment();
+updateComments();
 
 const commentsForm = document.getElementById('comments-form');
 
 commentsForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let commentToAdd = {};
-    commentToAdd.userName = e.target.userName.value;
-    commentToAdd.userComment = e.target.userComment.value;
-    let current_date = new Date();
-    commentToAdd.timeStamp = String(current_date.getMonth() + 1 + "/" + current_date.getDate() + "/" + current_date.getFullYear());
-    comments.unshift(commentToAdd);
+    commentToAdd.name = e.target.userName.value;
+    commentToAdd.comment = e.target.userComment.value;
     e.target.reset();
-    displayComment();
+    let commentPostStr = JSON.stringify(commentToAdd)
+    const postComment = axios.post(apiUrl+"comments"+"?api_key="+apiKey, commentToAdd);
+    postComment.then(
+        result => {
+            console.log(result);
+            updateComments();
+        }
+    )
 })

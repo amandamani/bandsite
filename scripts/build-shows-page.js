@@ -1,3 +1,6 @@
+let apiUrl = "https://project-1-api.herokuapp.com/";
+let apiKey = "9e0e3d6d-f22e-49f7-a582-6f15fcd91c55";
+
 let shows = [
     {
         date: "DATE",
@@ -5,50 +8,25 @@ let shows = [
         venue: "VENUE" ,
 
         location: "LOCATION"
-    },
-    {
-        date: "Mon Sept 06 2021",
-
-        venue: "Ronald Lane" ,
-
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 21 2021",
-
-        venue: "Pier 3 East" ,
-
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Oct 15 2021",
-
-        venue: "View Lounge" ,
-
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 06 2021",
-
-        venue: "Hyatt Agency" ,
-
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Nov 26 2021",
-
-        venue: "Moscow Center" ,
-
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 15 2021",
-
-        venue: "Press Club" ,
-
-        location: "San Francisco, CA"
     }
 ];
+
+const data = axios.get(apiUrl+"showdates"+"?api_key="+apiKey)
+data.then(
+    result => {
+        console.log(result);
+        result.data.forEach(element => {
+            let object = {};
+            object.venue = element.place;
+            object.date = new Intl.DateTimeFormat('en-US', {weekday: "short", month:"short",year: "numeric", day: "2-digit"}).format(element.date);
+            object.id = element.id;
+            object.location = element.location;
+            shows.push(object);
+            console.log(shows);
+        });
+        renderShows();
+    }
+);
 
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 
@@ -167,7 +145,6 @@ let renderShows = () => {
     })
 }
 
-renderShows();
 
 window.addEventListener("resize", renderShows);
 
