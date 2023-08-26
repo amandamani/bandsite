@@ -18,7 +18,7 @@ data.then(
         result.data.forEach(element => {
             let object = {};
             object.venue = element.place;
-            object.date = new Intl.DateTimeFormat('en-US', {weekday: "short", month:"short",year: "numeric", day: "2-digit"}).format(element.date);
+            object.date = (new Intl.DateTimeFormat('en-US', {weekday: "short", month:"short",year: "numeric", day: "2-digit"}).format(element.date)).replace(",","");
             object.id = element.id;
             object.location = element.location;
             shows.push(object);

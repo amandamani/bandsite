@@ -5,7 +5,6 @@ updateComments = () =>{
     let comments = new Array();
 
     let displayComment = () => {
-    
         const commentSection = document.getElementById('comment-section');
         commentSection.innerText = "";
         const hrEl = document.createElement('hr')
@@ -91,7 +90,6 @@ commentsForm.addEventListener('submit', (e) => {
     commentToAdd.name = e.target.userName.value;
     commentToAdd.comment = e.target.userComment.value;
     e.target.reset();
-    let commentPostStr = JSON.stringify(commentToAdd)
     const postComment = axios.post(apiUrl+"comments"+"?api_key="+apiKey, commentToAdd);
     postComment
     .then(
