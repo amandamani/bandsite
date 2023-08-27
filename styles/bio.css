@@ -441,6 +441,9 @@ body {
 .comments-form__feild--textareaHeight {
   height: 15vh;
 }
+.comments-form__feild--error {
+  border-color: red;
+}
 
 .new-comment {
   display: flex;

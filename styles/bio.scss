@@ -411,6 +411,9 @@ body {
         &--textareaHeight {
             height: 15vh;
         }
+        &--error{
+            border-color: red;
+        }
     }
 }
 

@@ -149,13 +149,23 @@ let createnewcomment = (element) => {
 
 updateComments();
 
+function onlyLettersAndSpaces(str) {
+    return /^[A-Za-z\s]*$/.test(str);
+
+  }
 const commentsForm = document.getElementById('comments-form');
+const commentInput = document.getElementById('userName');
 
 commentsForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let commentToAdd = {};
     commentToAdd.name = e.target.userName.value;
     commentToAdd.comment = e.target.userComment.value;
+    if (!(onlyLettersAndSpaces(commentToAdd.name))){
+        e.target.reset();
+        commentInput.classList.remove('comments-form__feild--error');
+        return
+    }
     e.target.reset();
     const postComment = axios.post(apiUrl+"comments"+"?api_key="+apiKey, commentToAdd);
     postComment
@@ -169,6 +179,17 @@ commentsForm.addEventListener('submit', (e) => {
             alert("Error: " + err);
         }
         )
+})
+
+
+commentInput.addEventListener('input', (e) => {
+    e.preventDefault()
+    if(!(onlyLettersAndSpaces(commentInput.value))){
+        commentInput.classList.add('comments-form__feild--error');
+    }
+    else {
+        commentInput.classList.remove('comments-form__feild--error');
+    }
 })
 
 const commentSection = document.getElementById('comment-section');
