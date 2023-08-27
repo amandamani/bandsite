@@ -500,5 +500,8 @@ body {
     @include desktop {
         width: 50vw;
     }
+    .like-button {
+        height:30px;
+    }
 }
 

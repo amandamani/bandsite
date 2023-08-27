@@ -14,6 +14,7 @@ updateComments = () =>{
             createnewcomment(element);
         })
     };
+
     function dynamicTimeString(dynaimcTimeStamp) {
         let timeDifference = Math.round(currentTime.getFullYear() - dynaimcTimeStamp.getFullYear());
         if ( timeDifference >= 1){
@@ -40,6 +41,7 @@ updateComments = () =>{
             return timeDifference == 1 ? `${timeDifference} second ago` : `${timeDifference} seconds ago`;
         }
     };
+
     const data = axios.get(apiUrl+"comments"+"?api_key="+apiKey)
     data.then(
         result => {
@@ -76,6 +78,7 @@ let createnewcomment = (element) => {
     newComment.appendChild(userPictureContainer);
 
     const userInfo = document.createElement('div');
+    const userComment = document.createElement('div');
 
     const userDetails = document.createElement('div');
     userDetails.classList.add('new-comment__userdetails');
@@ -95,8 +98,43 @@ let createnewcomment = (element) => {
     const userCommentContent = document.createElement('p');
     userCommentContent.classList.add('new-comment__userdetails__comment');
     userCommentContent.innerText = element.userComment;
+    userComment.appendChild(userCommentContent);
 
-    userInfo.appendChild(userCommentContent);
+    const likeButton = document.createElement('button');
+    likeButton.id = element.id;
+    likeButton.classList.add('like-button');
+
+    const likeLogo = document.createElement('img');
+    likeLogo.src = "assets/icons/SVG/icon-like.svg";
+    likeLogo.alt = "likeLogo";
+    likeLogo.id = element.id;
+    likeLogo.classList.add('like');
+    likeButton.appendChild(likeLogo);
+
+    const likes = document.createElement('span');
+    likes.innerText = element.likes;
+    likeButton.appendChild(likes);
+
+    userComment.appendChild(likeButton);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.id = element.id;
+    deleteButton.classList.add('delete-button')
+
+    const deleteLogo = document.createElement('img');
+    deleteLogo.src = "assets/icons/SVG/icon-delete.svg";
+    deleteLogo.alt = "deleteLogo";
+    deleteLogo.id = element.id;
+    deleteLogo.classList.add('delete-button')
+    deleteButton.appendChild(deleteLogo);
+
+    userComment.appendChild(deleteButton);
+
+
+
+
+    
+    userInfo.appendChild(userComment);
 
     newComment.appendChild(userInfo);
 
@@ -131,4 +169,41 @@ commentsForm.addEventListener('submit', (e) => {
             alert("Error: " + err);
         }
         )
+})
+
+const commentSection = document.getElementById('comment-section');
+
+commentSection.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const commentId = e.target.attributes.id.nodeValue;
+    const commentClass = e.target.attributes.class.nodeValue;
+    if (commentClass == 'delete-button') {
+        const deleteComment = axios.delete(apiUrl+"comments/"+commentId+"?api_key="+apiKey);
+        deleteComment
+        .then(
+                result => {
+                    updateComments();
+                }
+            )
+            .catch(
+                err => {
+                    alert("Error: " + err);
+                }
+                )
+    }
+    else if (commentClass == 'like-button' || commentClass == 'like'){
+        const addLike = axios.put(apiUrl+"comments/"+commentId+"/like"+"?api_key="+apiKey);
+        addLike
+        .then(
+            result => {
+                updateComments();
+            }
+        )
+        .catch(
+            err => {
+                alert("Error: " + err);
+            }
+            )
+    }
 })
