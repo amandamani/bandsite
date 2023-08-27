@@ -3,7 +3,7 @@ let apiKey = "9e0e3d6d-f22e-49f7-a582-6f15fcd91c55";
 
 updateComments = () =>{
     let comments = new Array();
-
+    let currentTime = new Date();
     let displayComment = () => {
         const commentSection = document.getElementById('comment-section');
         commentSection.innerText = "";
@@ -13,6 +13,32 @@ updateComments = () =>{
         comments.forEach(element => {
             createnewcomment(element);
         })
+    };
+    function dynamicTimeString(dynaimcTimeStamp) {
+        let timeDifference = Math.round(currentTime.getFullYear() - dynaimcTimeStamp.getFullYear());
+        if ( timeDifference >= 1){
+            return timeDifference == 1 ? `${timeDifference} year ago` : `${timeDifference} years ago`;
+        }
+        else if (Math.round((currentTime.getMonth() + 1) - (dynaimcTimeStamp.getMonth() + 1)) > 0) {
+            timeDifference = Math.round((currentTime.getMonth() + 1) - (dynaimcTimeStamp.getMonth() + 1))
+            return timeDifference == 1 ? `${timeDifference} month ago` : `${timeDifference} months ago`;
+        }
+        else if (Math.round(currentTime.getDate()  - dynaimcTimeStamp.getDate()) >= 1) {
+            timeDifference = Math.round(currentTime.getDate()  - dynaimcTimeStamp.getDate())
+            return timeDifference == 1 ? `${timeDifference} day ago` : `${timeDifference} days ago`;
+        }
+        else if (Math.round((currentTime.getHours() + 1)  - (dynaimcTimeStamp.getHours() + 1)) >= 1) {
+            timeDifference = Math.round((currentTime.getHours() + 1)  - (dynaimcTimeStamp.getHours() + 1))
+            return timeDifference == 1 ? `${timeDifference} hour ago` : `${timeDifference} hours ago`;
+        }
+        else if (Math.round((currentTime.getMinutes() + 1)  - (dynaimcTimeStamp.getMinutes() + 1)) >= 1) {
+            timeDifference = Math.round((currentTime.getMinutes() + 1)  - (dynaimcTimeStamp.getMinutes() + 1))
+            return timeDifference == 1 ? `${timeDifference} minute ago` : `${timeDifference} minutes ago`;
+        }
+        else {
+            timeDifference = Math.round((currentTime.getSeconds() + 1)  - (dynaimcTimeStamp.getSeconds()) + 1)
+            return timeDifference == 1 ? `${timeDifference} second ago` : `${timeDifference} seconds ago`;
+        }
     };
     const data = axios.get(apiUrl+"comments"+"?api_key="+apiKey)
     data.then(
@@ -24,11 +50,14 @@ updateComments = () =>{
                 object.id = element.id;
                 object.userComment = element.comment;
                 object.likes = element.likes;
+                object.dynaimcTimeStamp = new Date(element.timestamp);
                 comments.push(object);
+                
             });
             comments.sort(function(a, b){return b.timeStamp - a.timeStamp});
             comments.forEach(element => {
-                element.timeStamp = new Intl.DateTimeFormat('en-US', {day: "2-digit", month: "2-digit", year:"numeric"}).format(element.timeStamp)
+                // element.timeStamp = new Intl.DateTimeFormat('en-US', {day: "2-digit", month: "2-digit", year:"numeric"}).format(element.timeStamp)
+                element.timeStamp = dynamicTimeString(element.dynaimcTimeStamp);
             })
             displayComment();
         }
