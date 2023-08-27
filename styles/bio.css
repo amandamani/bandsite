@@ -338,6 +338,9 @@ body {
     padding-right: 1rem;
   }
 }
+.bandsite__main__photo:hover {
+  filter: grayscale(1);
+}
 .bandsite__main__photo--about {
   width: 90vw;
   padding-bottom: 1rem;
