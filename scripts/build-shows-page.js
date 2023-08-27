@@ -14,7 +14,6 @@ let shows = [
 const data = axios.get(apiUrl+"showdates"+"?api_key="+apiKey)
 data.then(
     result => {
-        console.log(result);
         result.data.forEach(element => {
             let object = {};
             object.venue = element.place;
@@ -22,7 +21,6 @@ data.then(
             object.id = element.id;
             object.location = element.location;
             shows.push(object);
-            console.log(shows);
         });
         renderShows();
     }

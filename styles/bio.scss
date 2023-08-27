@@ -198,7 +198,16 @@ body {
             right:5%;
             }
 
+            @include tablet1000{
+            position:relative;
+            right:6.5%;
+            }
+
             @include desktop {
+                right: 8%;
+            }
+
+            @include desktop1450{
                 right: 10%;
             }
         }
@@ -384,7 +393,7 @@ body {
     &__feild {
         background-color: white;
         border-radius: 4px;
-        width: 75vw;
+        width: 67vw;
         height: 5vh;
         @include tablet {
             width:65vw;
@@ -409,7 +418,7 @@ body {
     &__userdetails {
         display: flex;
         justify-content: space-between;
-        width: 75vw;
+        width: 67vw;
         @include tablet {
             width: 65vw;
         }
@@ -458,7 +467,7 @@ body {
     }
     &__buyticket {
         height: 8vh;
-        width: 90vw;
+        width: 85vw;
         letter-spacing: 0.08rem;
         @include mobile500{
             width: 93vw;

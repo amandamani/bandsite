@@ -217,7 +217,18 @@ body {
     right: 5%;
   }
 }
+@media (min-width: 1000px) {
+  .band-details__socials--icons {
+    position: relative;
+    right: 6.5%;
+  }
+}
 @media (min-width: 1279px) {
+  .band-details__socials--icons {
+    right: 8%;
+  }
+}
+@media (min-width: 1450px) {
   .band-details__socials--icons {
     right: 10%;
   }
@@ -404,7 +415,7 @@ body {
 .comments-form__feild {
   background-color: white;
   border-radius: 4px;
-  width: 75vw;
+  width: 67vw;
   height: 5vh;
   margin-bottom: 1rem;
 }
@@ -434,7 +445,7 @@ body {
 .new-comment__userdetails {
   display: flex;
   justify-content: space-between;
-  width: 75vw;
+  width: 67vw;
 }
 @media (min-width: 768px) {
   .new-comment__userdetails {
@@ -486,7 +497,7 @@ body {
 }
 .bandsite__button__buyticket {
   height: 8vh;
-  width: 90vw;
+  width: 85vw;
   letter-spacing: 0.08rem;
 }
 @media (min-width: 500px) and (max-width: 768px) {
