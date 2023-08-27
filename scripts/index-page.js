@@ -144,7 +144,6 @@ let createnewcomment = (element) => {
 
     commentSection.appendChild(newComment);
     commentSection.appendChild(hrLine);
-
 }
 
 updateComments();
