@@ -1,6 +1,8 @@
+//API KEY AND URL DEFINED
 let apiUrl = "https://project-1-api.herokuapp.com/";
 let apiKey = "9e0e3d6d-f22e-49f7-a582-6f15fcd91c55";
 
+//SHOWS ARRAY INITIALIZATION
 let shows = [
     {
         date: "DATE",
@@ -10,7 +12,7 @@ let shows = [
         location: "LOCATION"
     }
 ];
-
+// GET SHOWS 
 const data = axios.get(apiUrl+"showdates"+"?api_key="+apiKey)
 data.then(
     result => {
@@ -26,8 +28,10 @@ data.then(
     }
 );
 
+//JS MEDIA QUERY
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 
+//CREATE NEW INDIVIDUAL SHOW
 let createNewShow = (element) => {
 
     //CREATE ROW
@@ -127,6 +131,7 @@ let createNewShow = (element) => {
         showSection.appendChild(hrLine);}
 } 
 
+// RENDER HTML TO DISPLAY SHOWS
 let renderShows = () => {
     let showSection = document.getElementById('shows')
     showSection.innerText = '';
@@ -143,11 +148,11 @@ let renderShows = () => {
     })
 }
 
-
+//ON WINDOW RESIZE, RENDER SHOWS
 window.addEventListener("resize", renderShows);
 
 
-
+//HIGHLIGHT SELECTED SHOW
 window.addEventListener("click", (e) => {
 
     e.stopImmediatePropagation();
